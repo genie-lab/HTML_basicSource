@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main02.css'>
+    <title>HTML 3,4,5강</title>
+</head>
+<body>
+    <a id="content"><h2>목차</h2></a>
+    <ul>  
+      <li><a href="#img-element">img 속성</a></li>
+      <li><a href="#absolute-relative">img 상대/절대경로</a></li>
+      <li><a href="#href">&lt;a&gt; href 속성</a></li>
+      <li><a href="#target">img target 속성</a></li>
+      <li><a href="#download">img download 속성</a></li>
+      <li><a href="#specific-location">같은 페이지 특정위치로의 이동</a></li>
+      <li><a href="01.html#unordered-list">다른 페이지 특정위치 &lt;ul&gt;로 이동</a></li>
+    </ul><br/>
+
+    <div class="container">
+      <a id="img-element"><h2>img 속성</h2></a>
+      <img src="./img/desert.jpg" width="30%" alt="사막입니다">
+      <img src="./img/flower.jpg" width="30%"> 
+      <img src="./img/flower.jpg" width="100px">
+      <img src="./img/flower.jpg" width="100px" height="100px"> 
+      <img src="./img/desert.jpg" width="30%" border="5">
+      <img src="./img/desert.jpg" width="30%" alt="사막입니다">
+    </div>
+    
+    
+    <div class="container">
+      <a id="absolute-relative"><h2>img 상대/절대 경로</h2></a>
+      <img src="./img/desert.jpg" height="300px" alt="사막입니다"> 
+      <img src="C:/Users/genie/Documents/HTML/20210316/first/img/moon.jpg" height="300px" alt="사막입니다"><br/> 
+    </div>
+    
+    <div class="container">
+      <a id="href"><h2>&lt;a&gt; href 속성</h2></a>
+      <a href="http://www.knou.ac.kr">한국방송통신대학교</a><br/>
+      <a href="http://www.knou.ac.kr" title="한국방송통신대학교">한국방송통신대학교</a><br/>
+      <a href="http://www.knou.ac.kr" title="한국방송통신대학교">
+        <img src="./img/university.png" width="200px">
+      </a><br/>
+        원래 크기로 그림을 보려면 여기를
+      <a href="./img/moon.jpg">
+        <img src="./img/moon.jpg" width="100px">
+      </a> 클릭<br/> 
+    </div>
+    
+    <div class="container">
+      <a id="target"><h2>&lt;a&gt; target 속성</h2></a>
+      <a href="http://www.knou.ac.kr" target="_self">우리학교 현재창</a><br/>
+      <a href="http://www.knou.ac.kr" target="_blank">우리학교 새로운창</a><br/>
+    </div>
+    
+    <div class="container">
+      <a id="download"><h2>&lt;a&gt; download 속성</h2></a>
+      <a href="./img/flower.jpg" download><img src="./img/flower.jpg" width="200px"></a><br/>그림 다운로드 클릭<br/>
+      <a href="https://download.cpuid.com/cpu-z/cpu-z_1.79-en.exe" download><img src="./img/flower.jpg" width="200px"><br/>내컴사양 확인프로그램(CPU-Z) 다운로드(실제 다운로드 됩니다)</a><br/>
+    </div>
+    
+    <div class="container no-margin">
+      <a id="specific-location"><h2>특정위치로의 이동 되었음</h2> </a>
+    </div>
+
+    <!-- 홈으로 가는 버튼 -->
+    <a class="no-underline" href="#content"><div class="box">home</div></a>
+
+    <!-- 특정위치 가기위한 빈공간 생성 -->
+    <div style="height: 1000px;"></div>
+
+</body>
+</html>
