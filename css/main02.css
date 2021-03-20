@@ -1,6 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    outline: none;
+    font-family: "Noto Sans KR", sans-serif !important;
   }
 
 img {
@@ -12,12 +17,6 @@ img {
     display: block;
     margin-bottom: 2%;
 }
-
- .no-margine {
-    margin-bottom: 0;
-
-}
-
 
 li {
     list-style: none;
@@ -46,4 +45,22 @@ h2 {
 
 .no-underline {
     text-decoration-line: none;
+}
+
+table, th, tr, td {
+    border: 1px solid  #1DB99A;
+    border-collapse: collapse;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+thead {
+    background-color: #1db99a4d;
+    color: teal;
+}
+
+tfoot {
+    font-weight: 700;
+    background-color: rgba(221, 235, 28, 0.459);
+    color: rgb(14, 80, 105);
 }
