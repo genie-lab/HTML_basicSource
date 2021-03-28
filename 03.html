@@ -8,8 +8,18 @@
     <title>HTML 5,6강</title>
 </head>
 <body>
+  <header>
+       <!------------------------------- 목차 --------------------------------->
+          <span class="mr30"><a href="#audio-tag">&lt;audio&gt; 태그</a></span>
+          <span class="mr30"><a href="#video-tag">&lt;video&gt; 태그</a></span>
+          <span class="mr30"><a href="#form-tag">&lt;form&gt; 태그</a></span>
+          <span><a href="#reguler-expression">정규식</a></span>
+  </header>
+
+
+  <main>
     <!-------------------------------오디오 요소 --------------------------------->
-    <h2 id="audio">&lt;audio&gt; 태그</h2> <br/>
+    <h2 id="audio-tag">&lt;audio&gt; 태그</h2> <br/>
     <table style="width: 80%;">
       <colgroup>
         <col style="width: auto;">
@@ -20,7 +30,7 @@
       </thead>
       <tbody>
         <tr>
-          <td style="padding:100px; text-align: left;">
+          <td style="padding:10px 40px 10px 50px; text-align: left;">
             <h4>&lt;embed&gt; 태그</h4> 
             <ul style="text-align: left;">
               <li>플러그인을 사용하여 표시되는 데이터나 동영상을 웹 페이지에 삽입</li>
@@ -33,7 +43,7 @@
           </td>
         </tr>
         <tr>
-          <td style="padding:100px; text-align: left;">
+          <td colspan="2" style="padding:10px 0px 10px 50px; text-align: left;">
             <h4>&lt;audio&gt; 태그</h4> 
             <ul>
               <li>외부 플러그인 도움없이 간단히 오디오 재생</li>
@@ -72,29 +82,22 @@
               </li>
             </ul>
           </td>
+        </tr>
+        <tr>
+          <td><span class="mr50" style="position: relative; bottom: 20px;">source 태그이용 음소거</span>
+            <audio controls muted> 
+              <source src="./file/music.mp3" type="audio/ogg">
+              <source src="./file/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+          </td>
           <td>
-            <table>
-              <tr>
-                <td>source <br/>태그 이용 <br/>음소거</td>
-                <td>
-                  <audio controls muted> 
-                    <source src="./file/music.mp3" type="audio/ogg">
-                    <source src="./file/music.mp3" type="audio/mpeg">
-                      Your browser does not support the audio element.
-                  </audio>
-                </td>
-              </tr>
-              <tr>
-                <td>loop 추가<br/>(연속재생)</td>
-                <td>
-                  <audio controls loop preload="metadata">
-                    <source src="./file/Moon River ViolinCelloPianoBreakfast at Tiffanys OST_1080p.mp4" type="audio/ogg">
-                    <source src="./file/Moon River ViolinCelloPianoBreakfast at Tiffanys OST_1080p.mp4" type="audio/mpeg">
-                      Your browser does not support the audio element.
-                  </audio>
-                </td>
-              </tr>
-            </table>
+            <span class="mr50" style="position: relative; bottom: 20px;">loop 추가(연속재생)</span>
+            <audio controls loop preload="metadata">
+              <source src="./file/Moon River ViolinCelloPianoBreakfast at Tiffanys OST_1080p.mp4" type="audio/ogg">
+              <source src="./file/Moon River ViolinCelloPianoBreakfast at Tiffanys OST_1080p.mp4" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
           </td>
         </tr>
       </tbody>
@@ -103,7 +106,7 @@
 
     <!-------------------------------비디오 요소 --------------------------------->
     <!--오른 하단 세개 점 : PIP는 주로 동영상 재생에 사용되는 특수한 유형의 멀티 윈도우 모드-->
-    <h2>&lt;video&gt; 태그</h2><br/>
+    <h2 id="video-tag">&lt;video&gt; 태그</h2><br/>
     <table>
       <colgroup>
         <col style="width: auto;">
@@ -222,70 +225,333 @@
 
 
     <!------------------------------- form 폼만들기 --------------------------------->
-    <h2 id="audio">&lt;form&gt; 태그</h2> <br/>
-    <form enctype="multipart/form-data" action="02.html" method="post" autocomplete="on">
-      <!--text / password-->
-      <label for="id">아이디:</label> <input type="text" id="id" name="id" value="" required/><br/>
-      <label for="pwd">비밀번호:</label> <input type="password" id="pwd" name="pwd" value="" required/><br/>
-      <label for="pwd">닉네임:</label> <input type="text" id="nick" name="nick" value="" autocomplete="on"/><br/>
-     
-      <!--radio-->
-      <h4>성별</h4>
-      <input type="radio" id="female" name="gender" value="여자" checked/>
-      <label class="mr10" for="female">여자</label>
-      <input type="radio" id="male" name="gender" value="남자"/>
-      <label class="mr10" for="male">남자</label>
-      <input type="radio" id="other" name="gender" value="기재안함"/>
-      <label class="mr10" for="male">기재 안함</label>
+    <h2 id="form-tag">&lt;form&gt; 태그</h2> <br/>
+    
+    <table>
+      <form enctype="multipart/form-data" action="02.html" method="post"  autocomplete="on">
+        <colgroup>
+          <col style="width: 200px;"> 
+          <col style="width: 450px;"> 
+          <col style="width: 200px;"> 
+          <col style="width: 450px;"> 
+        </colgroup>
 
-      <h4>학년</h4>
-      <input type="radio" id="1grade" name="grade" value="1학년" checked/>
-      <label class="mr10" for="female">1학년</label>
-      <input type="radio" id="2grade" name="grade" value="2학년"/>
-      <label class="mr10" for="male">2학년</label>
-      <input type="radio" id="3grade" name="grade" value="3학년"/>
-      <label class="mr10" for="male">3학년</label>
-      <input type="radio" id="4grade" name="grade" value="4학년"/>
-      <label class="mr10" for="male">4학년</label>
-      
-      <!--checkbox-->
-      <h4>좋아하는 과일</h4>
-      <input type="checkbox" id="apple" name="apple" value="사과" checked/>
-      <label class="mr10" for="apple">사과</label>
-      <input type="checkbox" id="orange" name="orange" value="오랜지" />
-      <label class="mr10" for="apple">오랜지</label>
-      <input type="checkbox" id="mango" name="mango" value="망고" />
-      <label class="mr10" for="apple">망고</label>
-      <input type="checkbox" id="berry" name="berry" value="딸기" />
-      <label for="apple">딸기</label><br/>
+        <!--text / password-->
+        <tr>
+          <td><label for="id">아이디:</label> </td>
+          <td><input class="w100" type="text" id="id" name="id" placeholder="id" value="" autofocus required/></td>
+          <td><label for="pwd">비밀번호:</label> </td>
+          <td><input type="password" id="pwd" name="pwd" placeholder="password" value="" autofocus required/></td>
+        </tr>
 
-      <!--file / image-->
-      <input type="file" accept="image/*" multiple> <!--multiple -> 이미지 파일 여러파일선택-->
+        <tr>
+          <td><label for="nick">닉네임:</label></td>
+          <td><input type="text" id="nick" name="nick" placeholder="nick name" value="" autofocus autocomplete="on"/></td>
+         <!--file / image-->
+         <!--multiple -> 이미지 파일 여러파일선택-->
+          <td><label for="nick">파일전송:</label></td>
+          <td><input type="file" accept="image/*" multiple></td>
+        </tr>
 
-      <!--search tel-->
+        <tr>
+          <!--field set legend 태그 그룹핑-->
+          <!--radio-->
+          <td><label for="nick">선택사항:</label></td>
+          <td colspan="3">
+              <fieldset class="pt10 pb15" style="float: left;">
+                <legend>성별</legend>
+                <input class="default-input" type="radio" id="female" name="gender" value="여자" checked/>
+                <label class="mr10" for="female">여자</label>
+                <input class="default-input" type="radio" id="male" name="gender" value="남자"/>
+                <label class="mr10" for="male">남자</label>
+                <input class="default-input" type="radio" id="other" name="gender" value="기재안함"/>
+                <label class="mr10" for="male">기재 안함</label>
+              </fieldset> 
+              <fieldset class="pt10 pb15 mf10" style="float: left;">
+                <legend>학년</legend>
+                <input class="default-input" type="radio" id="1grade" name="grade" value="1학년" checked/>
+                <label class="mr10" for="female">1학년</label>
+                <input class="default-input" type="radio" id="2grade" name="grade" value="2학년"/>
+                <label class="mr10" for="male">2학년</label>
+                <input class="default-input" type="radio" id="3grade" name="grade" value="3학년"/>
+                <label class="mr10" for="male">3학년</label>
+                <input class="default-input" type="radio" id="4grade" name="grade" value="4학년"/>
+                <label class="mr10" for="male">4학년</label>
+              </fieldset> 
+            <!--checkbox-->
+            <fieldset class="pt10 pb15 mf10"  style="float: left;">
+              <legend>좋아하는 과일</legend>
+              <input class="default-input" type="checkbox" id="apple" name="fruit" value="사과" checked/>
+              <label class="mr10" for="apple">사과</label>
+              <input class="default-input" type="checkbox" id="orange" name="fruit" value="오랜지" />
+              <label class="mr10" for="apple">오랜지</label>
+              <input class="default-input" type="checkbox" id="mango" name="fruit" value="망고" />
+              <label class="mr10" for="apple">망고</label>
+              <input class="default-input" type="checkbox" id="berry" name="fruit" value="딸기" />
+              <label for="apple">딸기</label><br/>
+            </fieldset> 
+          </td>
+        </tr>
+        
+        <tr>
+          <!--search tel-->
+          <td><label for="search">검색</label></td>
+          <td><input type="search" id="search" name="search" placeholder="네트워크"/></td>
+          <!--tel 유효성검사 미실시-->
+          <td><label for="tel">전화번호(유효검사 미실시)</label></td>
+          <td><input type="tel" id="tel" name="tel" placeholder="010-1234-1234" title="입력양식:010-1234-1234" required/></td>
+        </tr>
 
+        <tr>
+          <!--정규식 https://www.w3schools.com/jsref/jsref_obj_regexp.asp-->
+          <!--정규식 테스트 https://regexr.com/-->
+          <td><label for="phone">전화번호: </label></td>
+          <td><input type="tel" id="phone" name="phone" pattern="/^\d{2,3}-\d{3,4}-\d{4}$/"  /></td>
+          <td><label for="jumin">주민번호: </label></td>
+          <td><input type="tel" id="jumin" name="jumin" pattern="\d{2}([0]\d|[1][0-2])([0][1-9]|[1-2]\d|[3][0-1])[-]*[1-4]\d{6}" /></td>
+        </tr>
 
+        <tr>
+          <td><label for="enName">영문이름: </label></td>
+          <td><input type="text" id="enName" name="enName" pattern="[a-zA-Z]{4,10}" title="4자리에서 10자리 영대소문자"  /></td>
+          <!--url / email 유효성검사 자동실시-->
+          <td><label for="url">URL기재: </label></td>
+          <td><input type="url" id="url" name="url" multiple placeholder="http://www.knou.ac.kr" /></td>
+        </tr>
 
-      <!--제출 타입 2가지 이미지 혹은 버튼-->
-      <!-- <input type="image" src="img/sun.jpg" width="100px" height="100px"  alt="제출버튼"><br> -->
-      <input class="mt20 pr20 pf20 pt5 pb5 button" type="submit" value="로그인"/>
-      <input class="mt20 pr20 pf20 pt5 pb5 reset" type="reset" value="리셋"/>
-    </form>
+        <tr>
+          <td><label for="mail">이메일: </label></td>
+          <td><input type="email" id="mail" name="mail" multiple /></td>
+        <!--number / range-->
+          <td><label for="number">단계별 숫자올리기: </label></td>
+          <td><input type="number" id="num" name="num" min="1" max="10" step="0.5" value="1" /></td>
+        </tr>
 
-    <!-- 제출 <input type=""> vs <button> -->
-    <form action="02.html">
-      <label for="id">아이디:</label> <input type="text" id="id" name="id" value="" required/><br/>
-      <label for="pwd">비밀번호:</label> <input type="password" id="pwd" name="pwd" value="" required/><br/>
-      <label for="pwd">닉네임:</label> <input type="text" id="nick" name="nick" value="" autocomplete="on"/><br/>
-      <input type="button" value="input에 타입속성 버튼" onclick="alert('안녕하세요')">
-      <button type="button" onclick="alert('반갑습니다')">버튼태그 타입:button</button>
-      <button type="button" onclick="alert('좋은 하루되세요')"><img src="img/university.png" width="100px"></button>
-      <button type="submit" >버튼태그 타입:submit</button>
-      <button type="reset" >버튼태그 타입:reset</button>
-    </form>
+        <tr>
+          <td><label for="range">특정범위지정: </label></td>
+          <td><input type="range" id="range" name="range" min="0" max="100" step="5" value="50" /></td>
+          <!--color-->
+          <td><label for="color">색상지정:  </label></td>
+          <td><input type="color" id="color" name="color"></td>
+        </tr>
 
+        <!--date / month / week / time / datetime-local-->
+        <tr>
+          <td><label for="date">년,월,일 입력(date): </label></td>
+          <td><input type="date" id="date" name="date"/></td>
+          <td><label for="month">년,월 입력(month): </label></td>
+          <td><input type="month" id="month" name="month"/></td>
+        </tr>
+
+        <tr>
+          <td><label for="week">년,주차 입력(week): </label></td>
+          <td><input type="week" id="week" name="week"/></td>
+          <td><label for="time">시간입력(time): </label></td>
+          <td><input type="time" id="time" name="time"/></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><label for="datetime-local">지역 시간대 기준 년,월,일,시간(datetime-local): </label></td>
+          <td colspan="2"><input type="datetime-local" id="datetime-local" name="datetime-local"/></td>
+        </tr>
+
+        <tr>
+          <!--textarea 태그-->
+          <td><label for="request">요청 글:  </label></td>
+          <td><textarea id="textarea1" name="textarea1" rows="5" cols="50%" style="border: none;" placeholder="내용을 기입해 주세요" ></textarea></td>
+          <!--select multiple 태그-->
+          <td><label for="animal-mulitple">좋아하는 동물  </label></td>
+          <td>
+            <select name="animal" multiple size="6">
+              <option value="">선택해주세요</option>
+              <option value="사자" selected>사자</option>
+              <option value="재규어">재규어</option>
+              <option value="블랙팬서" disabled>블랙팬서</option>
+              <option value="곰">곰</option>
+              <option value="사슴">사슴</option>
+            </select>  
+          </td>
+        </tr>
+        
+        <tr>
+          <!--select 태그-->
+          <td><label for="animal">좋아하는 동물</label></td>
+          <td>
+            <select name="animal" size="1">
+              <option value="">선택해주세요</option>
+              <option value="사자">사자</option>
+              <option value="재규어">재규어</option>
+              <option value="블랙팬서">블랙팬서</option>
+              <option value="곰">곰</option>
+              <option value="사슴">사슴</option>
+            </select>
+          </td>
+          <!--select grouping -> optgroup 태그-->
+          <td><label for="animal1">좋아하는 동물  </label></td>
+          <td>
+            <select name="animal" size="1">
+              <option value="">선택해주세요</option>
+              <optgroup label="고양이과">
+                <option value="사자" >사자</option>
+                <option value="재규어">재규어</option>
+                <option value="블랙팬서" disabled>블랙팬서</option>
+              </optgroup>
+              <optgroup label="개과">
+                <option value="개" >사자</option>
+                <option value="늑대">재규어</option>
+                <option value="여우" >블랙팬서</option>
+              </optgroup>
+            </select>  
+          </td>
+        </tr>
+        
+        <tr>
+          <!--datalist 태그-->
+          <td colspan="2"><label for="datlist">동물의 세계</label></td>
+          <td colspan="2">
+            <input type="text" list="divided-animal">
+            <datalist id="divided-animal">
+              <option value="고양이과" label="사자 재규어 표범"></option>  
+              <option value="개과" label="개 늑대 여우"></option>
+              <option value="원숭이과" label="원숭이 침팬지 고랄라" ></option>
+              <!-- <option value="원숭이과" label="원숭이 침팬지 고랄라" disabled></option> -->
+            </datalist>  
+          </td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <button class="mt40 mb40 pr20 pf20 pt5 pb5 mr20 button" type="submit">제출</button>
+            <button class="pr20 pf20 pt5 pb5 reset" type="reset">취소</button>
+          </td>
+        </tr>
+      </form>
+    </table>
+
+    <!--버튼타입만 따로 모음-->
+    <table class="mt50">
+    <form action="02.html" method="POST">
+        <tr>
+          <td>
+              <!--input 제출 타입 2가지 이미지 혹은 버튼-->
+              <fieldset class="pt10 pb15 pf10 pr10" style="width: 300px; text-align: center;">
+                <legend>폼 input 태그 제출 타입=image/sumit/reset</legend>
+                <input class="image-input" type="image" src="img/sun.jpg" alt="제출버튼"><br>
+                <input class="mt20 mr30 pr20 pf20 pt5 pb5 button default-input" type="submit" onclick="" value="서버 전송용도 버튼"/>
+                <input class="mt20 pr20 pf20 pt5 pb5 reset default-input" type="reset" value="리셋"/>
+              </fieldset> 
+          </td>
+          <td> 
+            <!-- 제출 <input type=""> vs <button> -->
+            <fieldset class="pt10 pb30 pf10 pr10" style="width: 300px; text-align:center;">
+              <legend>폼 input 태그 vs button 태그</legend>
+              <!--button 태그 에 비해서 디자인에 제약이 있다. (css 로는 디자인 가능)-->
+              <input class="mt20 pr20 pf20 pt5 pb5 button default-input" type="button" value="input에 타입속성 버튼" onclick="alert('안녕하세요')">
+              <!--submit 기능이 기본적으로 들어있다. 따라서 submit 하고 싶지 않다면 type = "button" 명시-->
+              <button class="mt20 pr20 pf20 pt5 pb5 button">submit 기능 기본 탑재/서버로 바로 전송</button>
+              <!--button" 기능 구현에 사용, 자바스크립트 이벤트 실행 목적-->
+              <button class="mt20 pr20 pf20 pt5 pb5 button" type="button" onclick="alert('반갑습니다')">버튼태그 타입:button</button>
+              <button class="mt20 pr20 pf20 pt5 pb5 button" type="button" onclick="alert('좋은 하루되세요')"><img src="img/university.png" width="100px"></button>
+              <button class="mt20 pr20 pf20 pt5 pb5 button" type="submit" >버튼태그 타입:submit</button>
+              <button class="mt20 pr20 pf20 pt5 pb5 button" type="reset" >버튼태그 타입:reset</button>
+            </fieldset> 
+          </td>
+        </tr>
+      </form>
+    </table>
+
+    <div class="mt40 mb40">
+      <h2  id="reguler-expression">정규식</h2>
+      <table class="mt50">
+        <colgroup>
+          <col style="width: 100px;">
+          <col style="width: 633px;">
+        </colgroup>
+        <thead>
+          <th>표현식</th>
+          <th>설명</th>
+        </thead>
+          <tr>
+            <td>^</td>
+            <td>문자열의 시작</td>
+          </tr>
+          <tr>
+            <td>$</td>
+            <td>문자열의 종료</td>
+          </tr>
+          <tr>
+            <td>.</td>
+            <td>임의의 한 문자 (문자의 종류 가리지 않음) 단, \는 넣을 수 없음</td>
+          </tr>
+          <tr>
+            <td>*</td>
+            <td>앞 문자가 없을 수도 무한정 많을 수도 있음</td>
+          </tr>
+          <tr>
+            <td>+</td>
+            <td>앞 문자가 하나 이상</td>
+          </tr>
+          <tr>
+            <td>?</td>
+            <td>앞 문자가 없거나 하나있음</td>
+          </tr>
+          <tr>
+            <td>[]</td>
+            <td>문자의 집합이나 범위를 나타내며 두 문자 사이는 - 기호로 범위를 나타낸다. <br/>[]내에서 ^가 선행하여 존재하면 not 을 나타낸다.</td>
+          </tr>
+          <tr>
+            <td>{}</td>
+            <td>횟수 또는 범위를 나타낸다.</td>
+          </tr>
+          <tr>
+            <td>()</td>
+            <td>소괄호 안의 문자를 하나의 문자로 인식</td>
+          </tr>
+          <tr>
+            <td>|</td>
+            <td>패턴 안에서 or 연산을 수행할 때 사용</td>
+          </tr>
+          <tr>
+            <td>  \s</td>
+            <td>공백 문자</td>
+          </tr>
+          <tr>
+            <td> \S</td>
+            <td>공백 문자가 아닌 나머지 문자</td>
+          </tr>
+          <tr>
+            <td> \w</td>
+            <td>알파벳이나 숫자</td>
+          </tr>
+          <tr>
+            <td>\W </td>
+            <td>알파벳이나 숫자를 제외한 문자</td>
+          </tr>
+          <tr>
+            <td>\d </td>
+            <td>숫자 [0-9]와 동일</td>
+          </tr>
+          <tr>
+            <td>\D </td>
+            <td>숫자를 제외한 모든 문자</td>
+          </tr>
+          <tr>
+            <td>\</td>
+            <td>정규표현식 역슬래시(\)는 확장 문자
+              역슬래시 다음에 일반 문자가 오면 특수문자로 취급하고 역슬래시 다음에 특수문자가 오면 그 문자 자체를 의미
+            </td>
+          </tr>
+          <tr>
+            <td>(?i)</td>
+            <td>앞 부분에 (?i) 라는 옵션을 넣어주면 대소문자를 구분하지 않음</td>
+          </tr>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </main>  
 
    <!-- 홈으로 가는 버튼 -->
-   <a class="no-underline" href="#audio"><div class="box">home</div></a>
+   <a class="no-underline" href="#audio-tag"><div class="box">home</div></a>
 </body>
 </html>
