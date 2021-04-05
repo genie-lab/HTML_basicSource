@@ -1,0 +1,217 @@
+
+  
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    padding: 1rem;
+    background: slateblue;
+    color: white;
+    font-size: 1em;
+    font-weight: 700;
+    justify-content: space-between;
+    text-align: center;
+    z-index: 3;
+    float: left;
+}
+main {
+    position: fixed;
+    top:3.3rem;
+    /*스크롤지정*/
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    overflow: auto;
+}
+
+h2 {
+    background-color: rgba(255, 102, 0, 0.7);
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+    font-weight: normal; 
+    font-size: 11pt;
+    padding: 5px;
+}
+
+.nav {
+    color: white;
+    font-weight: normal; font-size: 11pt;
+}
+
+.container { margin:0 auto; width:900px;}
+
+.box {
+    position: fixed;
+    background-color: slateblue;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 15px #aaa;
+    width: 64px;
+    height: 64px;
+    right: 50px;
+    bottom:50px;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+}
+
+
+/*========================================= 학습 =====================================================*/
+
+/*========== * 전체 universal 선택자 */
+* {
+    margin: 0;
+    outline: none;
+    text-decoration-line: none;
+    color: rgb(70, 70, 70); 
+  }
+
+/*========== 타입 선택자 -> 스타일을 적용할 HTML 요소의 이름을 직접 사용 */
+table, th, td { border-collapse: collapse; border: 1px solid slateblue; }
+
+ul { color: red; font-style: italic;}
+
+/*========== 몇개의 요소를 하나의 클래스로 묶어서 스타일 지정 */
+/* 같은 요소에 서로 다른 스타일을 적용하는 경우 */
+p.class1 { font-size: 20pt; color: red; }
+p.class2 { font-size: 20pt; color: blue; }
+p.class3 { font-size: 20pt; color: green; }
+/* 서로다른 요소에 서로 다른 스타일을 적용하는 경우 */
+.header { font-size: 20pt; }
+.class1 { font-style:italic; color:red; }
+
+/*========== 아이디 선택자 : 클래스 선택자와 유사한 사용방법 . 대신 # */
+#style1 { font-size: 15pt; color: blue; }
+p#style2 { font-size: 20pt; color: red; }
+
+/*========== 속성 선택자1 */
+input[type] { font-size: 20pt; color: tomato;}
+input[type="text"] {background-color: wheat;}
+input[type="password"] { background-color: yellowgreen;}
+/*========== 속성 선택자1 */
+a { font-weight: bold; font-size: 20pt;}
+a[title] { color: #222;}
+a[title="daum"] { color:red }
+a[title~="cyworld"] { color:orangered } /*속성값을 공백으로 구분한 요소를 선택*/
+a[title|="google"] { color:orange } /*속성값이 정확히 일치 or 값으로 시작하고 바로뒤에 - 기호로 구분한 요소 선택*/
+a[title^="face"] { color:greenyellow } /*속성값의 시작부분의 문자와 일치하는 요소를 선택 */
+a[title$="ter"] { color:skyblue } /*속성값의 끝 부분의 문자와 일치하는 요소를 선택*/
+a[title*="utu"] { color:purple } /*속성값 전체 중 어떤 일부분이라도 일치하는 요소를 선택*/
+
+/*========== 의사클래스_사용자동작 */
+input:hover { background-color: green;} /*사용자가 포인팅 장치로 특정요소를 지정하는 동안 적용*/
+input:focus { background-color: indianred;} /*요소가 포커스를 가지고 있는 동안에 적용*/
+label:active { font-size: 20px; color: rebeccapurple;} /*사용자에 의해 요소가 활성화되는 동안 적용*/
+
+/*========== 의사클래스_링크 */
+div a:link { color: green;}
+div a:visited { color: skyblue;}
+div a:hover { color: teal; font-size: 20px;}
+div a:active { background-color: yellowgreen;}
+
+
+div li {font-weight: bold; color:darkblue} /*자손결합자 선택자1 공백 선택자2*/
+p > em { font-size:15px; color:blanchedalmond; font-weight: bold;} /*자식결합자 선택자1 > 선택자2*/
+h1 + p { background-color: rgb(162, 165, 165);} /*인접형제결합자 선택자1 + 선택자2*/
+li.style1 ~ li { background-color: cornflowerblue;} /*일반형제결합자: 선택자1 ~ 선택자2*/
+h1,p {font-style: italic; font-family: cursive;} /*그룹결합자: 선택자1, 선택자2 cursive:필기체*/
+
+
+p { font-size:14px; line-height: 200%;}
+p.line::first-line { color: blue; font-weight: 600;} /*특정요소의 문단 첫번째줄 텍스트 선택*/
+p.line::first-letter { color: rebeccapurple; font-size: 20px;} /*첫번째 줄의 첫번째 글자 선택*/
+p.note::before { content: "NOTE:   "; border: 1px solid green } /*요소의 맨 앞에 추가되는 내용과 스타일 지정*/
+p.note::after { content: "- Remember this   "; background-color: yellowgreen; color: red; } /*요소의 맨 뒤에 추가되는 내용과 스타일 지정*/
+
+
+
+/*========================================== margin / padding =============================================*/
+
+.mt5 { margin-top: 5px;}
+.mt10 { margin-top: 10px;}
+.mt15 { margin-top: 15px;}
+.mt20 { margin-top: 20px;}
+.mt25 { margin-top: 25px;}
+.mt30 { margin-top: 30px;}
+.mt35 { margin-top: 35px;}
+.mt40 { margin-top: 40px;}
+.mt45 { margin-top: 45px;}
+.mt50 { margin-top: 50px;}
+
+.mb5 { margin-bottom: 5px;}
+.mb10 { margin-bottom: 10px;}
+.mb15 { margin-bottom: 15px;}
+.mb20 { margin-bottom: 20px;}
+.mb25 { margin-bottom: 25px;}
+.mb30 { margin-bottom: 30px;}
+.mb35 { margin-bottom: 35px;}
+.mb40 { margin-bottom: 40px;}
+.mb45 { margin-bottom: 45px;}
+.mb50 { margin-bottom: 50px;}
+
+.mr5 { margin-right: 5px;}
+.mr10 { margin-right: 10px;}
+.mr15 { margin-right: 15px;}
+.mr20 { margin-right: 20px;}
+.mr25 { margin-right: 25px;}
+.mr30 { margin-right: 30px;}
+.mr35 { margin-right: 35px;}
+.mr40 { margin-right: 40px;}
+.mr45 { margin-right: 45px;}
+.mr50 { margin-right: 50px;}
+
+.mf5 { margin-left: 5px;}
+.mf10 { margin-left: 10px;}
+.mf15 { margin-left: 15px;}
+.mf20 { margin-left: 20px;}
+.mf25 { margin-left: 25px;}
+.mf30 { margin-left: 30px;}
+.mf35 { margin-left: 35px;}
+.mf40 { margin-left: 40px;}
+.mf45 { margin-left: 45px;}
+.mf50 { margin-left: 50px;}
+
+.pr5 { padding-right: 5px;}
+.pr10 { padding-right: 10px;}
+.pr15 { padding-right: 15px;}
+.pr20 { padding-right: 20px;}
+.pr25 { padding-right: 25px;}
+.pr30 { padding-right: 30px;}
+.pr35 { padding-right: 35px;}
+.pr40 { padding-right: 40px;}
+.pr45 { padding-right: 45px;}
+.pr50 { padding-right: 50px;}
+
+.pf5 { padding-left: 5px;}
+.pf10 { padding-left: 10px;}
+.pf15 { padding-left: 15px;}
+.pf20 { padding-left: 20px;}
+.pf25 { padding-left: 25px;}
+.pf30 { padding-left: 30px;}
+.pf35 { padding-left: 35px;}
+.pf40 { padding-left: 40px;}
+.pf45 { padding-left: 45px;}
+.pf50 { padding-left: 50px;}
+
+.pt5 { padding-top: 5px;}
+.pt10 { padding-top: 10px;}
+.pt15 { padding-top: 15px;}
+.pt20 { padding-top: 20px;}
+.pt25 { padding-top: 25px;}
+.pt30 { padding-top: 30px;}
+.pt35 { padding-top: 35px;}
+.pt40 { padding-top: 40px;}
+.pt45 { padding-top: 45px;}
+.pt50 { padding-top: 50px;}
+
+.pb5 { padding-bottom: 5px;}
+.pb10 { padding-bottom: 10px;}
+.pb15 { padding-bottom: 15px;}
+.pb20 { padding-bottom: 20px;}
+.pb25 { padding-bottom: 25px;}
+.pb30 { padding-bottom: 30px;}
+.pb35 { padding-bottom: 35px;}
+.pb40 { padding-bottom: 40px;}
+.pb45 { padding-bottom: 45px;}
+.pb50 { padding-bottom: 50px;}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main04-select-pseudo.css'>
+    <title>7,8강</title>
+</head>
+<body>
+    <header>
+        <!------------------------------- 목차 --------------------------------->
+           <span class="mr50"><a class="nav" href="#css-selector">CSS 선택자</a></span>
+           <span class="mr50"><a class="nav" href="#css-pseudo">의사 클래스</a></span>
+           <span class="mr50"><a class="nav" href="#css-combine">결합자</a></span>
+           <span><a class="nav" href="#css-pseudo-element">의사요소</a></span>
+    </header>
+
+
+    <main>
+        <h2 id="css-selector">CSS 선택자</h2> <br/>
+            <div class="container">
+                <table>
+                    <thead>
+                        <th>선택자 이름</th>
+                        <th>선택자 형태</th>
+                        <th>설명</th>
+                    </thead>
+                    <tr>
+                        <td>전체 선택자</td>
+                        <td>*</td>
+                        <td>모든 요소에 스타일</td>
+                    </tr>
+                    <tr>
+                        <td>타입 선택자</td>
+                        <td>요소명</td>
+                        <td>지정한 요소에만 스타일 적용</td>
+                    </tr>
+                    <tr>
+                        <td>클래스 선택자</td>
+                        <td>요소명.클래스명<br/> .클래스명</td>
+                        <td>지정한 클래스명을 사용한 요소에만 적용</td>
+                    </tr>
+                    <tr>
+                        <td>아이디 선택자</td>
+                        <td>요소명#아이디명<br/> #아이디명</td>
+                        <td>지정한 아이디명을 사용한 요소에만 적용</td>
+                    </tr>
+                    <tr>
+                        <td>속성 선택자</td>
+                        <td>요소명[속성]</td>
+                        <td>지정한 속성에 해당하는 요소에만 적용</td>
+                    </tr>
+                </table>
+                
+                <p class="class1"> 동일 요소 , 다른 스타일 </p>
+                <p class="class2"> 동일 요소 , 다른 스타일 </p>
+                <p class="class3"> 동일 요소 , 다른 스타일 </p>
+
+                <h3 class="class1 header"> 다른 요소 , 같은 스타일 </h3>
+                <p class="class1"> 다른 요소 , 같은 스타일 </p>
+                <div class="class1">다른 요소 , 같은 스타일</div>
+
+                <div id="style1"> 
+                    div 요소에 아이디 선택자 (#style1) 적용
+                    <p id="style2"> p 요소에 아이디 선택자 (p#style2) 적용</p>
+                    <p> id 는 문서에서 중복되지 않고 한 요소에서 한 번만 사용 가능 </p>
+                </div>
+
+                <table>
+                    <thead>
+                        <th colspan="2"> 요소명[속성명 연산자 값]{ 속성: 값; ... }</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>요소명[속성명]</td>
+                            <td>속성값과 상관없이 해당 속성을 사용하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명="값"]</td>
+                            <td>속성값과 일치하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명~="값"]</td>
+                            <td>속성값을 공백으로 구분한 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명|="값"]</td>
+                            <td>속성값이 정확히 일치하거나 값으로 시작하고 바로 뒤에 -기호로 구분한 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명^="값"]</td>
+                            <td>속성값의 시작부분의 문자와 일치하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명$="값"]</td>
+                            <td>속성값의 끝 부분의 문자와 일치하는 요소를 선택</td>
+                        </tr>
+                        <tr>
+                            <td>요소명[속성명*="값"]</td>
+                            <td>속성값 전체 중 어떤 일부분이라도 일치하는 요소를 선택</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 속성 선택자1 -->
+                <form>
+                    <div>
+                        <label for="id">아이디</label>
+                        <input type="text" id="id" name="id"/>
+                    </div>
+                    <div>
+                        <label for="pw">패스워드</label>
+                        <input type="password" id="pw" name="pw"/>
+                    </div>
+                </form>
+                
+                <!-- 속성 선택자2 -->
+                <a title="naver" href="http://www.naver.com">네이버</a><br/>
+                <a title="daum" href="http://www.daum.net">다음</a><br/>
+                <a title="nate cyworld" href="http://www.cyworld.com">싸이월드</a><br/>
+                <a title="google-translate" href="http://translate.google.com">구글 번역</a><br/>
+                <a title="facebook" href="http://www.facebook.com">페이스북</a><br/>
+                <a title="twitter" href="http://www.twitter.com">트위터</a><br/>
+                <a title="youtube" href="http://kr.youtube.com">유튜브</a><br/>
+            </div><br/>
+
+
+            <!-- 의사 클래스 -->
+            <h2 id="css-pseudo">의사 클래스</h2> <br/> <!--pseudo : 가짜의 -->
+            <div class="container">
+            <table>
+                <tr>
+                    <td colspan="3">
+                        의사클래스 : 해당요소에는 실제로 존재하지 않지만 <br/>
+                        해당요소에 클래스가 선언된 것처럼 간주하여 만든 선택자<br/>
+                        사용방법 : "기본 선택자: 의사클래스"
+                    </td>
+                </tr>
+                <thead>
+                    <th>구분</th>
+                    <th>의사클래스</th>
+                    <th>설명</th>
+                </thead>
+                <tr>
+                    <td rowspan="2">링크 의사클래스</td>
+                    <td>:link</td>
+                    <td>아직 방문한 적이 없는 링크를 선택</td>
+                </tr>
+                <tr>
+                    <td>:visited</td>
+                    <td>사용자에 의해 방문한 적이 있는 링크를 선택</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">사용자 동작 의사클래스</td>
+                    <td>:hover</td>
+                    <td>사용자가 포인팅 장치로 특정요소를 지정하는 동안에 적용</td>
+                </tr>
+                <tr>
+                    <td>:active</td>
+                    <td>사용자에 의해 요소가 활성화되는 동안에 적용</td>
+                </tr>
+                <tr>
+                    <td>:focus</td>
+                    <td>요소가 포커스를 가지고 있는 동안에 적용</td>
+                </tr>
+            </table>
+
+            <h4>의사클래스_ 사용자동작</h4>
+            <form>
+                <label for="name">이름을 입력하세요</label>
+                <input  type="text" id="name" name="name"/>
+            </form>
+
+            <h4>의사클래스_ 링크</h4>
+            <div><a href="http://www.knou.ac.kr">한국방송통신대학교</a></div>
+            <div><a href="http://cs.knou.ac.kr">컴퓨터과학과</a></div>
+            <div><a href="http://cs.knou.ac.kr/~kylee">교수홈페이지</a></div><br/>
+        </div>
+
+
+        <!--결합자-->
+        <h2 id="css-combine">결합자</h2> <br/>
+        <div class="container">
+            <table>
+                <tr>
+                    <td>선택자를 문맥이나 요소의 구조를 기반으로 결합하는 방법</td>
+                </tr>
+                <thead>
+                    <th>결합자 명칭<br/>사용형식</th>
+                    <th>설명</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>자손결합자<br/> 선택자1  선택자2</td>
+                        <td>선택자1의 자손(하위요소) 중에서 선택자 2에 해당하는 모든 요소를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>자식결합자<br/> 선택자1 > 선택자2</td>
+                        <td>선택자1을 부모요소로하여 직계자식요소인 선택자2를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>인접형제결합자<br/> 선택자1 + 선택자2</td>
+                        <td>선택자1 바로 뒤에 오는 동생인 선택자2 요소만을 선택</td>
+                    </tr>
+                    <tr>
+                        <td>일반형제결합자<br/> 선택자1 ~ 선택자2</td>
+                        <td>선택자1 다음에 오는 형제관계에 있는 모든 선택자2를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>그룹결합자<br/> 선택자1, 선택자2, ..</td>
+                        <td>여러 선택자가 동일한 스타일을 사용하는 경우에 선택자들을 한꺼번에 표현</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <h1>CSS 결합자 </h1>
+                <p>CSS에서 사용하는 <em>결합자의 종류</em>를 연습</p>
+                <ul>
+                    <li>자손결합자: 선택자1 공백 선택자2</li>
+                    <li class="style1">자식결합자: 선택자1 &gt; 선택자2</li>
+                    <li>인접형제결합자: 선택자1 + 선택자2</li>
+                    <li>일반형제결합자: 선택자1 ~ 선택자2</li>
+                    <li>그룹결합자: 선택자1,선택자2, ...</li>
+                </ul>
+                <p>다양한 결합자를 사용해서 결과를 확인해보세요</p>
+            </div>
+        </div>
+
+
+        <!--의사요소-->
+        <h2 id="css-pseudo-element">의사요소</h2>
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        HTML에서 접근할 수 없는 정보와 소스문서에<br/>
+                        존재하지 않는 콘텐츠에 대한 참조가 가능한 수단
+                    </td>
+                </tr>
+                <thead>
+                    <th>의사요소</th>
+                    <th>설명</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>::first-line</td>
+                        <td>특정요소를 사용하는 문단의 첫번째줄의 텍스트를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>::first-letter</td>
+                        <td>첫번째 줄의 텍스트에서 첫번째 글자를 선택</td>
+                    </tr>
+                    <tr>
+                        <td>::before</td>
+                        <td>요소 내용의 맨 앞에 추가되는 내용과 스타일 지정</td>
+                    </tr>
+                    <tr>
+                        <td>::after</td>
+                        <td>요소 내용의 맨 뒤에 추가되는 내용과 스타일 지정</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p class="line">Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It is not rude, it is not self-seeking, it is not easily angered, it keeps no record of wrong.</p>
+            <p class="note mb50">의사 요소<br/> 
+                ::before는 내용의 앞(before), <br/>
+                ::after는 내용의 뒤(after)에 생성된 내용을 삽입한다.
+            </p>
+        </div>
+            
+        <!-- 홈으로 가는 버튼 -->
+        <a class="nav" href="#css-selector"><div class="box">home</div></a>
+    </main>
+</body>
+</html>

@@ -1,0 +1,172 @@
+* { margin: 0; outline: none; font-size: 14pt; text-decoration-line: none; margin:5px; color: rgb(70, 70, 70); }
+table, th, td { border-collapse: collapse; border: 1px solid slateblue; }
+h4 {margin-top: 50px; background-color:slateblue; color: rgb(255, 255, 255);  margin-bottom: 10px; font-weight: normal; font-size: 11pt; padding: 5px;}
+
+/*=================== color ===================*/
+p.color1 { background-color: silver; }
+p.color2 { background-color: #ff00ff }
+p.color3 { background-color: #c69=#cc6699 }
+p.color4 { background-color: rgb(255,128,0) }
+p.color5 { background-color: rgb(100%,50%,0%) }
+p.alpha1 { background-color: rgba(255,0,0,1.0) }
+p.alpha2 { background-color: rgba(255,0,0,0.5) }
+p.alpha3 { background-color: rgba(255,0,0,0.1) }
+
+p.color11 {background-color: hsl(120,100%,50%);}
+p.color12 {background-color: hsl(120,100%,75%);}
+p.color13 {background-color: hsl(120,100%,25%);}
+p.color14 {background-color: hsl(120,50%,25%);}
+p.alpha11 {background-color: hsla(240,100%,50%,0.5);}
+p.alpha12 {background-color: hsla(30,100%,50%,0.1);}
+
+div { font-size:20pt; border:1px solid black; margin:5px; background-color: rgb(151, 138, 228); color:blue;}
+#c1 { color: rgb(255, 0, 0) }
+#c2 { color: inherit } /*상위 상속 --> div 부모값 상속 default == black */
+#c3 { color: transparent } /*투명한 - 글씨 색 사라짐*/
+#c4 { color: initial } /*initial : 기본값으로 설정*/
+#o1 { opacity: 0.3 } 
+#o2 { opacity: 0.5 } 
+table, th, td { border-collapse: collapse; border: 1px solid steelblue; }
+#o3 { opacity: 1.0 }
+
+/*font 지정하기 serif==명조 sans-serif==고딕*/
+/*왼쪽부터 순차적 폰트적용, 한글 없는 글꼴 앞에 두고 한글글꼴 뒤에 두면 한글영어 다른 글꼴로 표현 */
+.font0 { font-family: Georgia, "Malgun Gothic", serif }
+.font1 { font-family: 굴림체, "맑은고딕", 궁서체 }
+.font2 { font-family: serif }
+.font3 { font-family: sans-serif }
+.font4 { font-family: cursive } /*필기체*/
+.font5 { font-family: fantasy } /*화려한 글꼴*/
+.font6 { font-family: monospace } /*글자폭 간격 일정한 글꼴*/
+
+.font11 { font-size : 15px }
+.font12 { font-size : 15pt }
+.font13 { font-size : 100% }
+.font14 { font-size : 200% }
+.font15 { font-size : xx-small } /*xx-small, x-small, small, large, x-large, xx-large : medium에 대한 상대적인 크기입니다.*/
+.font16 { font-size : x-small } 
+.font17 { font-size : small }
+.font19 { font-size : large }
+.font110 { font-size : x-large } 
+.font111 { font-size : xx-large } 
+.font18 { font-size : medium } /*medium : 웹브라우저에서 정한 기본 글자크기입니다.*/
+.font112 { font-size : smaller } /*smaller, larger : 부모 요소의 글자 크기에 대한 상대적인 글자 크기입니다.*/
+.font113 { font-size : larger }
+
+
+.font114 { font-size:20pt; font-style:normal; }
+.font115 { font-size:20pt; font-style:italic; } /*이텔릭체*/
+.font116 { font-size:20pt; font-style:oblique; } /*뜻 : 비스듬*/
+
+
+.font117 { font-size:20pt; font-weight: 100; } 
+.font118 { font-size:20pt; font-weight: 400; } 
+.font119 { font-size:20pt; font-weight: 900; } 
+.font120 { font-size:20pt; font-weight: normal; } /*==400*/
+.font121 { font-size:20pt; font-weight: bold; } /*==700*/
+.font122 { font-size:20pt; font-weight: bolder; } 
+.font123 { font-size:20pt; font-weight: lighter; } 
+
+.font124 { font-size:20pt; font-variant: normal; } 
+.font124 { font-size:20pt; font-variant: small-caps; } 
+
+.all-style { font:700 italic small-caps 25pt / 10pt sans-serif  }
+
+@font-face { font-family: 'myFont'; src: url(../font/BMJUA_ttf.ttf); } 
+p.import-font { font-family: myFont; font-size: 20pt; }
+
+
+
+
+
+
+
+/*========================================== margin / padding =============================================*/
+
+.mt5 { margin-top: 5px;}
+.mt10 { margin-top: 10px;}
+.mt15 { margin-top: 15px;}
+.mt20 { margin-top: 20px;}
+.mt25 { margin-top: 25px;}
+.mt30 { margin-top: 30px;}
+.mt35 { margin-top: 35px;}
+.mt40 { margin-top: 40px;}
+.mt45 { margin-top: 45px;}
+.mt50 { margin-top: 50px;}
+
+.mb5 { margin-bottom: 5px;}
+.mb10 { margin-bottom: 10px;}
+.mb15 { margin-bottom: 15px;}
+.mb20 { margin-bottom: 20px;}
+.mb25 { margin-bottom: 25px;}
+.mb30 { margin-bottom: 30px;}
+.mb35 { margin-bottom: 35px;}
+.mb40 { margin-bottom: 40px;}
+.mb45 { margin-bottom: 45px;}
+.mb50 { margin-bottom: 50px;}
+
+.mr5 { margin-right: 5px;}
+.mr10 { margin-right: 10px;}
+.mr15 { margin-right: 15px;}
+.mr20 { margin-right: 20px;}
+.mr25 { margin-right: 25px;}
+.mr30 { margin-right: 30px;}
+.mr35 { margin-right: 35px;}
+.mr40 { margin-right: 40px;}
+.mr45 { margin-right: 45px;}
+.mr50 { margin-right: 50px;}
+
+.mf5 { margin-left: 5px;}
+.mf10 { margin-left: 10px;}
+.mf15 { margin-left: 15px;}
+.mf20 { margin-left: 20px;}
+.mf25 { margin-left: 25px;}
+.mf30 { margin-left: 30px;}
+.mf35 { margin-left: 35px;}
+.mf40 { margin-left: 40px;}
+.mf45 { margin-left: 45px;}
+.mf50 { margin-left: 50px;}
+
+.pr5 { padding-right: 5px;}
+.pr10 { padding-right: 10px;}
+.pr15 { padding-right: 15px;}
+.pr20 { padding-right: 20px;}
+.pr25 { padding-right: 25px;}
+.pr30 { padding-right: 30px;}
+.pr35 { padding-right: 35px;}
+.pr40 { padding-right: 40px;}
+.pr45 { padding-right: 45px;}
+.pr50 { padding-right: 50px;}
+
+.pf5 { padding-left: 5px;}
+.pf10 { padding-left: 10px;}
+.pf15 { padding-left: 15px;}
+.pf20 { padding-left: 20px;}
+.pf25 { padding-left: 25px;}
+.pf30 { padding-left: 30px;}
+.pf35 { padding-left: 35px;}
+.pf40 { padding-left: 40px;}
+.pf45 { padding-left: 45px;}
+.pf50 { padding-left: 50px;}
+
+.pt5 { padding-top: 5px;}
+.pt10 { padding-top: 10px;}
+.pt15 { padding-top: 15px;}
+.pt20 { padding-top: 20px;}
+.pt25 { padding-top: 25px;}
+.pt30 { padding-top: 30px;}
+.pt35 { padding-top: 35px;}
+.pt40 { padding-top: 40px;}
+.pt45 { padding-top: 45px;}
+.pt50 { padding-top: 50px;}
+
+.pb5 { padding-bottom: 5px;}
+.pb10 { padding-bottom: 10px;}
+.pb15 { padding-bottom: 15px;}
+.pb20 { padding-bottom: 20px;}
+.pb25 { padding-bottom: 25px;}
+.pb30 { padding-bottom: 30px;}
+.pb35 { padding-bottom: 35px;}
+.pb40 { padding-bottom: 40px;}
+.pb45 { padding-bottom: 45px;}
+.pb50 { padding-bottom: 50px;}

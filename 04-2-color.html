@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main04-color.css'>
+    <title>7,8강::color</title>
+</head>
+<body>
+    
+    <h4>색상지정방식 rgb함수</h4>
+    <p class="color1"> 색상명:silver</p>
+    <p class="color2"> 16진수:#ff00ff</p>
+    <p class="color3"> 16진수:#c69</p>
+    <p class="color4"> rgb(255,128,0)</p>
+    <p class="color5"> rgb(100%,50%,0%)</p>
+    <p class="alpha1"> rgba(255,0,0,1.0) 빨간 완전 불투명</p>
+    <p class="alpha2"> rgba(255,0,0,0.5) 빨간 반투명</p>
+    <p class="alpha3"> rgba(255,0,0,0.1) 빨간 거의 투명</p>
+
+    <h4>색상지정방식 hsl(색조[숫자],채도[%],밝기[%])</h4>
+    <p class="color11">hsl(120,100%,50%)</p>
+    <p class="color12">hsl(120,100%,75%)</p>
+    <p class="color13">hsl(120,100%,25%)</p>
+    <p class="color14">hsl(120,50%,75%)</p>
+    <p class="alpha11">hsla(240,100%,50%,0.5)</p>
+    <p class="alpha12">hsla(30,100%,50%,0.1)</p>
+    
+    <h4>color속성, opacity속성</h4>
+    <div id="c1">color: rgb(255, 0, 0)</div> 
+    <div id="c2">color: inherit- 부모 요소의 속성값을 상속받음</div>
+    <div id="c3">color: transparent-투명하게</div> 
+    <div id="c4">color: initial -기본값으로 설정</div><br/>
+    <div id="o1">opacity: 0.3</div> 
+    <div id="o2">opacity: 0.5</div> 
+    <div id="o3">opacity: 1.0</div>
+
+    <h4>글꼴 속성</h4>
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>값</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>font-family</td>
+                <td>
+                    일반폰트명 : 굴림체, 궁서체, ‘Times New Roman’, … <br/>
+                    폰트패밀리 
+                    <ul>
+                        <li>serif : 삐침 있는 명조계열의 글꼴</li>
+                        <li>sans-serif : 삐침 없고 굵기가 일정한 고딕계열의 글꼴</li>
+                        <li>monospace : 글자 폭과 간격이 일정한 글꼴</li>
+                        <li>cursive : 손으로 쓴 것 같은 필기계열의 글꼴</li>
+                        <li>fantasy : 화려한 글꼴</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>font-size(글자크기지정)</td>
+                <td>
+                    절대크기 키워드 : xx-small, x-small, small, medium, large, x-large, xx-large<br/>
+                    상대크기 키워드 : smaller, larger<br/>
+                    절대단위 : m, mm, in, pt, pc, px<br/>
+                    상대단위 : em, ex, %
+                </td>
+            </tr>
+            <tr>
+                <td>font-sytle</td>
+                <td>
+                    nomal, italic, oblique
+                </td>
+            </tr>
+            <tr>
+                <td>font-variant(작은대문자로 변환)</td>
+                <td>
+                    nomal, small-caps
+                </td>
+            </tr>
+            <tr>
+                <td>font-weight</td>
+                <td>
+                    100... 900<br/>
+                    normal==400, bold==700, bolder, lighter
+                </td>
+            </tr>
+            <tr>
+                <td>font(글꼴 속성의 일괄지정)</td>
+                <td>
+                    [font-style | font-variant | font-weight]<br/>
+                    font-size[/ line-height] font-family
+                </td>
+            </tr>
+            <tr>
+                <td>@font-face 규칙(사용자가 정의한 글꼴을 사용하기 위한 것)</td>
+                <td>
+                    @font-face{font-family:"사용자 지정 글꼴 이름"; src:url("글꼴 경로와 파일명")}<br/>
+                    사용가능 글꼴 종류 : .TTF .OTF .EOT .SVG .SVGZ
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Font 지정하기</h4>
+    <p class="font0">Font 지정하기</p>
+    <p class="font1">Font 지정하기</p>
+    <p class="font2">Font 지정하기</p>
+    <p class="font3">Font 지정하기</p>
+    <p class="font4">Font 지정하기</p>
+    <p class="font5">Font 지정하기</p>
+    <p class="font6">Font 지정하기</p>
+
+
+    <h4>font-size 속성</h4>
+    <p class="font11">Font-size 지정하기</p>
+    <p class="font12">Font-size 지정하기</p>
+    <p class="font13">Font-size 지정하기</p>
+    <p class="font14">Font-size 지정하기</p>
+    <p class="font15">Font-size 지정하기</p>
+    <p class="font16">Font-size 지정하기</p>
+    <p class="font17">Font-size 지정하기</p>
+    <p class="font18">Font-size 지정하기</p>
+    <p class="font19">Font-size 지정하기</p>
+    <p class="font110">Font-size 지정하기</p>
+    <p class="font111">Font-size 지정하기</p>
+    <p class="font112">Font-size 지정하기</p>
+    <p class="font113">Font-size 지정하기</p>
+    
+    
+    <h4>font-style 속성</h4>
+    <p class="font114">Font-style 지정하기</p>
+    <p class="font115">Font-style 지정하기</p>
+    <p class="font116">Font-style 지정하기</p>
+
+    <h4>font-weight 속성</h4>
+    <p class="font117">Font-weight 지정하기</p>
+    <p class="font118">Font-weight 지정하기</p>
+    <p class="font119">Font-weight 지정하기</p>
+    <p class="font120">Font-weight 지정하기</p>
+    <p class="font121">Font-weight 지정하기</p>
+    <p class="font122">Font-weight 지정하기</p>
+    <p class="font123">Font-weight 지정하기</p>
+
+    <h4>font-variant 속성</h4>
+    <p class="font124">Font-variant 지정하기</p>
+    <p class="font125">Font-variant 지정하기</p>
+
+    <h4>font 속성 일괄지정</h4>
+    <p class="all-style">FONT 일괄 지정하기</p>
+
+    <h4>@font-face 규칙</h4>
+    <p class="import-font">CSS의 @font-face 규칙으로 외부글꼴 -배민 한나체 사용하기</p>
+
+</body>
+</html>

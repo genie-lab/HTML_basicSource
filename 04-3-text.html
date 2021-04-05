@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main04-text.css'>
+    <title>7,8강</title>
+</head>
+<body>
+    <h4>텍스트 속성</h4>
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>letter-spacing</td>
+                <td>텍스트에서 문자사이 간격 지정. normal, &lt;길이&gt;</td>
+            </tr>
+            <tr>
+                <td>word-spacing</td>
+                <td>단어 사이의 간격 지정. normal, &lt;길이&gt;</td>
+            </tr>
+            <tr>
+                <td>line-height</td>
+                <td>문장의 줄간격 지정. normal, &lt;길이&gt;, &lt;숫자&gt;, %</td>
+            </tr>
+            <tr>
+                <td>tab-size</td>
+                <td>탭 문자의 크기지정. &lt;숫자&gt;(8), &lt;길이&gt;</td>
+            </tr>
+            <tr>
+                <td>text-indent</td>
+                <td>텍스트 블록에서 첫번째 줄의 들여쓰기 지정. &lt;길이&gt;(0), %</td>
+            </tr>
+            <tr>
+                <td>text-align</td>
+                <td>텍스트의 수평정렬방식 지정. left, right, center, justify</td>
+            </tr>
+            <tr>
+                <td>text-align-last</td>
+                <td>
+                    텍스트의 마지막 줄의 정렬방식 지정("text-align:justify"일때 적용).<br/>
+                    auto, left, right, center, justify, start, end
+                </td>
+            </tr>
+            <tr>
+                <td>text-transform</td>
+                <td>영어 알파벳의 표기방식 지정 none, capitalize, uppercase, lowercase</td>
+            </tr>
+            <tr>
+                <td>text-decoration</td>
+                <td>텍스트 장식. none, underline, overline, line-through</td>
+            </tr>
+            <tr>
+                <td>text-shadow</td>
+                <td>텍스트에 그람자 효과를 지정. none, &lt;수평위치&gt; &lt;수직위치&gt; &lt;흐림정도&gt; &lt;그림자색상&gt;</td>
+            </tr>
+            <tr>
+                <td>text-wrap</td>
+                <td>긴 단어가 요소의 폭을 넘을 경우 단어를 분리해서 줄바꿈 수행여부. normal, break-word</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>letter-spacing 속성</h4>
+    <p class="text1">letter-spacing 글자사이 간격지정</p>
+    <p class="text2">letter-spacing 글자사이 간격지정</p>
+    <p class="text3">letter-spacing 글자사이 간격지정</p>
+    
+    <h4>word-spacing 속성</h4>
+    <p class="text11">word-spacing 단어사이 간격지정</p>
+    <p class="text12">word-spacing 단어사이 간격지정</p>
+    <p class="text13">word-spacing 단어사이 간격지정</p>
+
+    <h4>line-height 속성</h4>
+    <p class="text14">줄 간격을 지정하기 위해서는line-height 속성을 사용하며, 정수값이나 절대/상대크기 단위를 사용해서 값을 지정한다. </p>
+    <p class="text15">줄 간격을 지정하기 위해서는line-height 속성을 사용하며, 정수값이나 절대/상대크기 단위를 사용해서 값을 지정한다. </p>
+    <p class="text16">줄 간격을 지정하기 위해서는line-height 속성을 사용하며, 정수값이나 절대/상대크기 단위를 사용해서 값을 지정한다. </p>
+    <p class="text17">줄 간격을 지정하기 위해서는line-height 속성을 사용하며, 정수값이나 절대/상대크기 단위를 사용해서 값을 지정한다. </p>
+    
+    <h4>tab-size, text-indent 속성</h4>
+    <pre>
+    I   have     tabs   inside!
+    이 문장은 탭(크기 4)을 이용한 문장입니다!
+    </pre>
+    <pre style="tab-size: 4">
+    I   have     tabs   inside!
+    이 문장은 탭(크기 4)을 이용한 문장입니다!
+    </pre>
+    <pre style="tab-size: 10;">
+    I   have     tabs   inside!
+    이 문장은 탭(크기 10)을 이용한 문장입니다!
+    </pre>
+
+    <h4>text-indent 속성: 단락 들여쓰기</h4>
+    <p class="indent1">text-indent 속성: 단락 들여쓰기 20pt</p> 
+    <p class="indent2">text-indent 속성: 단락 들여쓰기 20%</p> 
+    <p class="indent3">text-indent 속성: 단락 들여쓰기 –10%</p>
+    
+    <h4>text-align 속성</h4>
+    <p class="text18">text-align 속성: HTML 요소의 텍스트를 수평정렬할때 사용</p> 
+    <p class="text19">text-align 속성: HTML 요소의 텍스트를 수평정렬할때 사용</p> 
+    <p class="text20">text-align 속성: HTML 요소의 텍스트를 수평정렬할때 사용</p> 
+    <p class="text21">text-align 속성: HTML 요소의 텍스트를 수평정렬할때 사용</p> 
+    <p class="text22">text-align-last 속성: 텍스트의 마지막 줄의 정렬방식을 지정하는 것으로 text-align 속성이 justify로 지정되어야만 동작한다</p> 
+    
+    <h4>text-transform 속성</h4>
+    <p class="text23">TEXT-transform 속성: 지정된 텍스트의 영어 알파벳 표기 방식 지정</p> 
+    <p class="text24">TEXT-transform 속성: 지정된 텍스트의 영어 알파벳 표기 방식 지정</p> 
+    <p class="text25">TEXT-transform 속성: 지정된 텍스트의 영어 알파벳 표기 방식 지정</p> 
+    <p class="text26">TEXT-transform 속성: 지정된 텍스트의 영어 알파벳 표기 방식 지정</p> 
+
+</body>
+</html>
