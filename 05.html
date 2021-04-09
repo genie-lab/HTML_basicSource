@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main05.css'>
+
+    <title>9,10강</title>
+</head>
+<body>
+    <h4>text-decoration 속성</h4><br/>
+    <table>
+        <colgroup>
+            <col style="width: 300px;"/>
+            <col style="width: 500px;"/>
+        </colgroup>
+        <thead>
+            <th>속성</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+               <td>text-decoration</td> 
+               <td>텍스트 장식 none, underline, overline, line-throgh</td> 
+            </tr>
+            <tr>
+                <td>text-shadow</td>
+                <td>텍스트에 그림자 효과를 지정 none, &lt;수평위치&gt;, &lt;수직위치&gt;, &lt;흐림정도&gt;, &lt;그람자색상&gt;</td>
+            </tr>
+            <tr>
+                <td>word-wrap</td>
+                <td>긴 단어가 요소의 폭을 넘을 경우 단어를 분리해서 줄바꿈 수행여부. normal, break-word</td>
+            </tr>
+        </tbody>
+    </table><br/>
+
+    <p class="text1">텍스트 장식 none</p>
+    <p class="text2">텍스트 장식 overline(윗줄)</p>
+    <p class="text3">텍스트 장식 underline(아랫줄)</p>
+    <p class="text4">텍스트 장식 line-through(취소선)</p><br/>
+    
+    <table>
+        <colgroup>
+            <col style="width: 300px;"/>
+            <col style="width: 500px;"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>텍스트 장식 관련 속성의 일괄지정(in CSS3, 미지원)</th>
+                <td>text-decoration: text-decoration-line값 | text-decoration-style값 | text-decoration-color;</td>
+            </tr>
+            <tr>
+                <th> text-decoration-line속성 : 선의 종류</th>
+                <td>값 : none, underline, overline, line-through</td>
+            </tr>
+            <tr>
+                <th>text-decoration-style속성 : 선 장식의 스타일</th>
+                <td>값 : solid, double, dotted, dashed, wavy</td>
+            </tr>
+            <tr>
+                <th>text-decoration-color속성 : 선의 색상</th>
+                <td></td>
+            </tr>
+        </tbody>
+    </table> <br/>
+    
+    <p class="text11">CSS3에 추가된 text-decoration-* 속성사용하기(일괄지정)</p>
+    <p class="text12">CSS3에 추가된 text-decoration-* 속성사용하기(풀어쓰기)</p>
+    
+    <h4>text-shadow 속성</h4><br/>
+    <table>
+        <colgroup>
+            <col style="width: 300px;"/>
+            <col style="width: 500px;"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>텍스트에 그림자효과 지정</th>
+                <td>
+                    값 : none, &lt;수평위치&gt;, &lt;수직위치&gt;, [&lt;흐림정도&gt;], [&lt;색상&gt;] <br/>
+                    h&gt;0, h&lt;0 : 오른쪽,왼쪽 방향 /  v&gt;0, v&lt;0 : 아래쪽,위쪽 방향 / 그림자의 번지는 정도 / 기본 : 검은색 <br/>
+                    하나의 텍스트에 여러 그림자 효과는 콤마로 구분해서 지정
+                </td>
+            </tr>
+        </tbody>
+    </table><br/>
+
+    <p class="shadow1">CSS3의 텍스트 그림자 효과주기</p><br/>
+    <p class="shadow2">CSS3의 텍스트 그림자 효과주기</p><br/>
+    <p class="shadow3">CSS3의 텍스트 그림자 효과주기</p><br/><br/>
+    
+
+    <table>
+        <colgroup>
+            <col style="width: 300px;"/>
+            <col style="width: 500px;"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>word-wrap 속성</th>
+                <td>
+                    단어가 길어서 요소의 폭을 넘을 경우<br/>
+                    단어를 분리해서 줄바꿈의 수행여부 지정<br/>
+                    값 : normal(줄바꿈 미수행), break-word(줄바꿈 수행)
+                </td>
+            </tr>
+        </tbody>
+    </table><br/>
+
+    <!-- 영어는 먹고 한글은 안먹음 -->
+    <p class="line test0">찬미를 위하여 그들은 열매를 되는 길지 교향악이다. 같이, 뜨고, <span class="word-break">용기가얼마나청춘의청춘의사막이다.</span> 청춘은 웅대한 스며들어 평화스러운 오직 쓸쓸하랴? 인간의 우리의 이상은 하는 힘차게 봄바람이다. 구하기 구하지 눈이 가는 있다.</p>
+    <p class="line test1">찬미를 위하여 그들은 열매를 되는 길지 교향악이다. 같이, 뜨고, <span class="word-break">용기가얼마나청춘의청춘의사막이다.</span> 청춘은 웅대한 스며들어 평화스러운 오직 쓸쓸하랴? 인간의 우리의 이상은 하는 힘차게 봄바람이다. 구하기 구하지 눈이 가는 있다.</p> 
+    <p class="line test0">thisisaveryveryveryveryveryveryveryaveryveryveryveryveryveryveryaveryveryveryveryveryveryverylongword</p> 
+    <p class="line test1">thisisaveryveryveryveryveryveryveryaveryveryveryveryveryveryveryaveryveryveryveryveryveryverylongword</p>
+    
+    <!-- word-break 어절  -->
+    <p class="line test2">찬미를 위하여 그들은 열매를 되는 길지 교향악이다. 같이, 뜨고, <span class="word-break">용기가얼마나청춘의청춘의사막이다.</span> 청춘은 웅대한 스며들어 평화스러운 오직 쓸쓸하랴? 인간의 우리의 이상은 하는 힘차게 봄바람이다. 구하기 구하지 눈이 가는 있다.</p>
+    <p class="line test3">찬미를 위하여 그들은 열매를 되는 길지 교향악이다. 같이, 뜨고, <span class="word-break">용기가얼마나청춘의청춘의사막이다.</span> 청춘은 웅대한 스며들어 평화스러운 오직 쓸쓸하랴? 인간의 우리의 이상은 하는 힘차게 봄바람이다. 구하기 구하지 눈이 가는 있다.</p>
+    <p class="line test4">찬미를 위하여 그들은 열매를 되는 길지 교향악이다. 같이, 뜨고, <span class="word-break">용기가얼마나청춘의청춘의사막이다.</span> 청춘은 웅대한 스며들어 평화스러운 오직 쓸쓸하랴? 인간의 우리의 이상은 하는 힘차게 봄바람이다. 구하기 구하지 눈이 가는 있다.</p>
+ 
+
+    <h4>box 속성</h4>
+    <table>
+        <colgroup>
+            <col style="width: 300px;"/>
+            <col style="width: 500px;"/>
+        </colgroup>
+        <tbody>
+            <tr>
+                <th>HTML 문서의 각 요소를<br/> 사각형 형태의 박스로<br/> 간주</th>
+                <td>
+                    CSS를 통해 각 박스의 위치, 크기, 색상 등을 지정<br/>
+                    웹페이지의 레이아웃을 구성하는 중요한 개념!!<br/>
+                    <img src="./img/box.PNG" width="500px"/>
+                </td>
+            </tr>
+        </tbody>
+    </table><br/>
+
+    <h4>display 속성</h4><br/>
+    <table>
+        
+        <table>
+            <colgroup>
+                <col style="width: 300px;"/>
+                <col style="width: 500px;"/>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th colspan="2">HTML요소의 표현방식 지정 요소를 위해 사용할 박스의 종류 지정</th>
+                </tr>
+                <tr>
+                    <th>none</th>
+                    <td>요소를 화면에 표시하지 않음</td>
+                </tr>
+                <tr>
+                    <th>inline</th>
+                    <td>요소를 인라인 박스로 취급(줄바꿈 미수행)</td>
+                </tr>
+                <tr>
+                    <th>block</th>
+                    <td>요소를 블록 박스로 취급(앞뒤로 줄바꿈 수행)</td>
+                </tr>
+                <tr>
+                    <th>inline-block</th>
+                    <td>인라인 수준의 블록으로 취급<br/>(박스 자체는 인라인박스, 내부는 블록형식)</td>
+                </tr>
+                <tr>
+                    <th>list-item</th>
+                    <td>블록 박스를 목록의 항목과 같이 표시</td>
+                </tr>
+            </tbody>
+        </table><br/>
+
+        <div>
+            <span>첫번째 span요소(style없음) </span>
+            <span class="my-span0">두번째 span요소(display:none) </span>
+            <span class="my-span0">세번째 span요소(display:none) </span>
+            <span>네번째 span요소(style없음) </span>
+            <hr/>
+            <span>첫번째 span요소(style없음) </span>
+            <span class="my-span1">두번째 span요소(display:inline) </span>
+            <span class="my-span1">세번째 span요소(display:inline) </span>
+            <span>네번째 span요소(style없음) </span>
+            <hr/>
+            <span>첫번째 span요소(style없음) </span>
+            <span class="my-span2">두번째 span요소(display:block) </span>
+            <span class="my-span2">세번째 span요소(display:block) </span>
+            <span>네번째 span요소(style없음) </span>
+            <hr/>
+            <span>첫번째 span요소(style없음) </span>
+            <span class="my-span3">두번째 span요소(display:inline-block) </span>
+            <span class="my-span3">세번째 span요소(display:inline-block) </span>
+            <span>네번째 span요소(style없음) </span>
+            <hr/>
+            <span>첫번째 span요소(style없음) </span>
+            <span class="my-span4">두번째 span요소(display:list-item) </span>
+            <span class="my-span4">세번째 span요소(display:list-item) </span>
+            <span>네번째 span요소(style없음) </span>
+        </div>
+
+        <h4>margin 속성</h4>
+        <ul>
+            <li>박스의 외부여백(박스테두리 밖의 여백) 지정</li>
+            <li>
+                모든 방향(상우하좌)에 대해 일괄지정 : <br/> 
+                4->상 우 하 좌<br/>
+                3->상 좌우 하<br/>
+                2->상하 좌우<br/>
+                1->상하좌우<br/>
+            </li>
+            <li>
+                개별 방향의 마진 지정<br/>
+                margin-방향: &lt;길이&gt; | &lt;%&gt; | auto
+            </li>
+        </ul><br/>
+
+        <div class="margin-test margin1">margin(마진) 지정</div><hr/>
+        <div class="margin-test margin2">margin(마진) 지정</div><hr/>
+        <div class="margin-test margin3">margin(마진) 지정</div><hr/>
+
+        <div class="inline-block">
+            <div>박스가 인접하지 않은 경우</div>
+            <div class="margin-test margin4">margin-bottom:30px</div><hr/>
+            <div class="margin-test margin5">margin-top: 60px</div>
+        </div>
+        <div class="inline-block">
+            <div>박스가 인접한 경우</div>
+            <div class="margin-test margin4">margin-bottom:30px</div>
+            <div class="margin-test margin5">margin-top: 60px</div>
+        </div>
+
+        <h4>padding 속성</h4>
+        <ul>
+            <li>
+                요소내용과 테두리 사이의 여백 지정<br/>
+                padding : &lt;길이&gt; | &lt;%&gt; 
+             </li>
+            <li>모든 방향(상우하좌)에 대해 일괄 지정<br/>
+                4->상 우 하 좌<br/>
+                3->상 좌우 하<br/>
+                2->상하 좌우<br/>
+                1->상하좌우
+            </li>
+            <li>
+                개별방향의 패딩 지정<br/> 
+                padding : &lt;길이&gt; | &lt;%&gt; 
+            </li>
+        </ul>
+
+        <div class="padding-test padding1">
+            <span class="padding-span">padding 박스안의 간격지정</span>
+        </div><br/>
+        <div class="padding-test padding2">
+            <span class="padding-span">padding 박스안의 간격지정</span>
+        </div><br/>
+        <div class="padding-test padding3">
+            <span class="padding-span">padding 박스안의 간격지정</span>
+        </div><br/>
+
+        <h4>width, height 속성</h4>
+        <p class="style1">콘텐츠 영역의 크기(폭과 높이) 지정</p><br/>
+        <div class="style2">콘텐츠 영역의 크기(폭과 높이) 지정</div><br/>
+        <input class="style3" type="button" value="버튼"/><br/>
+        <hr class="style4">
+
+        <h4>min-width, min-height, max-width, max-height 속성</h4>
+        <ul>
+            <li>
+                특정 요소에 대한 콘텐츠의 최소/최대의 폭 , 높이 지정<br/>
+                값 -> &lt;길이&gt; , &lt;%&gt;, none
+            </li>
+        </ul><br/>
+
+        <div class="min-max-element"> min-width, mid-height, max-width, max-height 속성은 특정 요소에 대한 콘텐츠의 최소 및 최대 폭과 높이를 제한할 수 있는 속성입니다. </div> <br/> 
+        <div class="min-max-element min"> min-width, mid-height, max-width, max-height 속성은 특정 요소에 대한 콘텐츠의 최소 및 최대 폭과 높이를 제한할 수 있는 속성입니다.  </div><br/>
+        <div class="min-max-element max"> min-width, mid-height, max-width, max-height 속성은 특정 요소에 대한 콘텐츠의 최소 및 최대 폭과 높이를 제한할 수 있는 속성입니다.  </div>
+
+        <h4>vertical-align 속성</h4>
+        <ul>
+            <li>요소의 수직정렬 지정</li>
+            <li>
+                값 -> &lt;길이&gt;(음수값 허용),<br/> 
+                baseline(부모 요소의 기본 줄에 맞춤),<br/> 
+                sub(아래첨자), super(위첨자),<br/> 
+                top(요소의 상단을 해당 줄에서 가장 높은 요소의 상단에 맞춤),<br/> 
+                middle(부모요소의 중앙에 맞춤),<br/> 
+                bottom(요소의 하단을 해당 줄에서 가장 낮은 요소의 하단에 맞춤),<br/> 
+                text-top(요소의 상단을 부모요소의 폰트의 상단에 맞춤),<br/> 
+                text-bottom(요소의 하단을 부모요소의 폰트의 하단에 맞춤)<br/> 
+            </li>
+        </ul><br/>
+
+        <p>수직 정렬 <span class="v-span valign1">baseline</span> 정렬하기 </p>
+        <p>수직 정렬 <span class="v-span valign2">sub</span> 정렬하기</p>
+        <p>수직 정렬 <span class="v-span valign3">super</span> 정렬하기</p>
+        <p>수직 정렬 <img src="./img/flower.jpg" class="valign4" height="70"> top 정렬하기</p>
+        <p>수직 정렬 <img src="./img/flower.jpg" class="valign5" height="70"> middle 정렬하기</p>
+        <p>수직 정렬 <img src="./img/flower.jpg" class="valign6" height="70"> bottom 정렬하기</p>
+        <p>수직 정렬 <img src="./img/flower.jpg" class="valign7" height="70"> text-top 정렬하기</p>
+        <p>수직 정렬 <img src="./img/flower.jpg" class="valign8" height="70"> text-bottom 정렬하기</p>
+        <p>수직 정렬 <span class="v-span valign8">길이 10pt</span> 정렬하기</p>
+        <p>수직 정렬 <span class="v-span valign9">길이 -10pt</span> 정렬하기</p>
+
+        <h4>position 속성</h4>
+        <table>
+            <thead>
+                <th colspan="2">
+                    요소 배치의 기준이 되는 위치<br/>(요소 위치 설정 방식) 지정
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>static</th>
+                    <td>
+                        페이지의 정상적인 흐름에 따라 현재의 위치를 요소의 위치로 지정<br/>
+                        위치 지정/변경 불가 -> top, bottom, left, right 속성은 무시
+                    </td>
+                </tr>
+                <tr>
+                    <th>absolute</th>
+                    <td>브라우저의 왼쪽 상단의 모서리를 기준, 지정한 위치만큼 이동하여 해당 요소를 배치</td>
+                </tr>
+                <tr>
+                    <th>relative</th>
+                    <td>현재 위치를(0,0)으로 정하고 이를 기준으로 지정한 위치만큼 이동하여 해당 요소를 배치</td>
+                </tr>
+                <tr>
+                    <th>fixed</th>
+                    <td>
+                        뷰포트를 기준(현재 윈도우)으로 지정한 위치만큼 이동하여 요소배치<br/>
+                        현재 윈도우에서 고정된 위치에 배치 -> 스크롤해도 움직이지 않음.
+                    </td>
+                </tr>
+            </tbody>
+        </table><br/>
+            <div class="position-exam">
+                <div style="border: 1px solid red;">
+                    <!-- relative 속성 -->
+                    <div class="box1"> <span class="in-box-span">position relative 박스</span></div>
+                    <div class="box2"> <span class="in-box-span">position relative 박스</span></div>
+                </div>
+            
+            
+           
+                <div style="border: 1px solid red;">
+                    <!-- absolute 속성 -->
+                    <div class="box3"> <span class="in-box-span">position absolute 박스</span></div>
+                    <div class="box4"> <span class="in-box-span">position absolute 박스 여기 있다고 놀라지 마세요^^</span></div>
+                </div>
+            </div>
+
+            <h4>top, bottom, left, right 속성</h4>
+            <ul>
+                <li>박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리 지정</li>
+                <li>값 -> auto, &lt;길이&gt;(음수가능), &lt;%&gt;(음수가능) </li>
+            </ul><br/>
+            <div class="position-exam">
+                <div class="block">
+                    <div class="my-div0"> (auto 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div1"> (top:20px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div2"> (bottom:20px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div3"> (top:-20px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div4"> (bottom:-30px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+            </div>
+            
+            <div class="position-exam">
+                <div class="block">
+                    <div class="my-div5"> (left:20% 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div6"> (right:35px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div7"> (left:-20px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+                <div class="block">
+                    <div class="my-div8"> (right:-30px 적용) top, right, bottom, left 속성을 이용하여 박스의 포함 블록의 각 변을 기준으로 해당 요소가 떨어져 있는 거리를 지정한다.</div>
+                </div>
+            </div>
+        
+            <h4>float 속성</h4>
+        <ul>
+            <li>콘텐츠의 일반적인 흐름을 벗어나서 부모요소 영역을 기준으로 해당요소를 왼쪽/오른쪽에 배치하도록 지정</li>
+            <li>값 -> none, left, right</li>
+        </ul>
+
+        <div class="float-container">
+            <div class="float-box1">박스1</div>
+            <div class="float-box1">박스2</div>
+            <div class="float-box1">박스3</div>
+        </div>
+        <div class="float-container">
+            <div class="float-box2">박스1</div>
+            <div class="float-box2">박스2</div>
+            <div class="float-box2">박스3</div>
+        </div>
+        <div class="float-container">
+            <div class="float-box3">박스1</div>
+            <div class="float-box3">박스2</div>
+            <div class="float-box3">박스3</div>
+        </div>
+
+    </body>
+</html>

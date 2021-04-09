@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main05.css'>
+
+    <title>9,10강</title>
+</head>
+<body>
+        <h4 style="margin-top: 100px; text-align: right;" >z-index 속성</h4>
+        
+        <div class="z-index pos1">위치지정 1 static; top: 120px; left: 120px;</div>
+        <div class="z-index pos2">위치지정 2 relative; top: -30px; left: 60px; z-index: 3; </div>
+        <div class="z-index pos3">위치지정 3 absolute; top: 120px; left: 150px; z-index: 2;</div>
+        <div class="z-index pos4">위치지정 4 absolute; top: 90px; left: 90px;</div>
+        <div class="z-index pos5">위치지정 5 fixed; top: 30px; left: 10px;</div>
+        <br/><br/>
+        <ul>
+            <li>요소가 겹쳐지는 순서 지정 </li>
+            <li>
+                값 -> auto, &lt;정수&gt;<br/>
+                position: relative | absolute | fixed 인 경우에만 동작 <br/>
+                z-index:양수(상위 layer) ~ 음수(하위 layer)
+            </li>
+        </ul><br/>
+
+        
+    </body>
+</html>
