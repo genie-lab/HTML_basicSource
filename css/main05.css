@@ -107,7 +107,23 @@ span.padding-span { background-color: violet; color: white;}
 .pos4 { position: absolute; top: 90px; left: 90px; background-color: sienna; color: white; display: flex;  text-align: center;}
 .pos5 { position: fixed; top: 30px; left: 10px; background-color: olive; color: white; display: flex; align-items: center; text-align: center;}
 /*float 속성*/
-.float-container { width:70%; overflow: auto; border: 1px solid purple; } /* float 속성은 상위요소에 영향을 미치지 않기때문에 height싸이즈를 차지하지 않음 그래서 overflow:auto로 해줘야 하위요소 싸이즈만큼 자동으로 차지하게 됨*/
+.float-container { width:70%; overflow: auto; border: 1px solid purple; } /* float 속성은 상위요소에 영향을 미치지 않기때문에 height싸이즈를 차지하지 않음 그래서 overflow:auto 콘텐츠가 요소 박스를 넘어서는 경우의 처리 방법*/
 .float-box1 { float: none; display:flex; width:100px; height: 100px; margin: 10px; padding: 10px; background-color: orangered;  }
 .float-box2 { float: left; width:100px; height: 100px; margin: 10px; padding: 10px; background-color: orangered;  }
 .float-box3 { float: right; width:100px; height: 100px; margin: 10px; padding: 10px; background-color: orangered;  }
+/*clear 속성*/
+img.float { float: none;}
+img.float1 { float: left;}
+img.float2 { float: right;}
+img.float3 { float: left;}
+p.clear1 { clear:left; clear: both; background-color: burlywood;}
+p.clear2 { clear:right; clear: both; background-color: burlywood;}
+/*overflow 속성*/
+.overflow0 { height: 100px; width: 250px; border:1px solid crimson; overflow: hidden;}
+.overflow1 { height: 100px; width: 250px; border:1px solid crimson; overflow: scroll;}
+.overflow2 { height: 100px; width: 250px; border:1px solid crimson; overflow: auto;}
+/*visibility 속성*/
+.non-visibility { visibility: hidden; background-color: hsla(51, 100%, 50%, 0.5);}
+.legacy { visibility: collapse;}
+/*resize*/
+.resize { border:2px dashed dodgerblue; background-color: white; padding: 20px; width: 300px; resize: both; overflow: auto;}

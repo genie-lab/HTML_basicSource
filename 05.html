@@ -389,12 +389,12 @@
                 </div>
             </div>
         
-            <h4>float 속성</h4>
+        <h4>float 속성</h4>
         <ul>
             <li>콘텐츠의 일반적인 흐름을 벗어나서 부모요소 영역을 기준으로 해당요소를 왼쪽/오른쪽에 배치하도록 지정</li>
             <li>값 -> none, left, right</li>
         </ul>
-
+        
         <div class="float-container">
             <div class="float-box1">박스1</div>
             <div class="float-box1">박스2</div>
@@ -410,6 +410,80 @@
             <div class="float-box3">박스2</div>
             <div class="float-box3">박스3</div>
         </div>
-
+        
+        <h4>clear 속성</h4>
+        <ul>
+            <li>
+                float 속성에 의해 영향을 받는 요소의 흐름을 해제<br/>
+                왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정
+            </li>
+            <li>값 -> none, left, right, both</li>
+        </ul><br/>
+        <h5>플로팅 지정</h5>
+        <img class="float" src="img/sun.jpg" width="100px" >
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <hr>
+        <img class="float1" src="img/sun.jpg" width="100px" >
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <hr>
+        <img class="float2" src="img/sun.jpg" width="100px" >
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <hr>
+        
+        <h5>플로팅 해제</h5>
+        <img class="float3" src="img/sun.jpg" width="100px" >
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <p class="clear1">float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <hr>    
+        <img class="float2" src="img/sun.jpg" width="100px" >
+        <p>float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+        <p class="clear2">float 속성에 의해 영향을 받는 요소의 흐름을 해제 왼쪽/오른쪽이 아닌 바로 아래쪽에 요소를 배치하도록 지정</p>
+    
+        <h4>overflow 속성</h4>
+        <ul>
+            <li>콘텐츠가 요소 박스를 넘어서는 경우 처리방법 지정</li>
+            <li>값 -> visible, hidden, scroll, auto</li>
+            <li>
+                overflow -x, overflow-y 속성<br/>
+                수평 및 수직 방향으로 구분해서 오버플로우 처리방법 지정
+            </li>
+        </ul><br/>
+        
+        <div class="position-exam">
+            <div class="overflow0"> 
+                국보 제1호. 문화재 관리국은 1996년 11월 28일 광복 50주년 역사 바로 세우기 일환으로 일본식 표현, 부적절한 명칭, 역사왜곡, 우리역사와 무관한 유적, 가치평가의 왜곡 등을 주요 항목으로 설정하고 심의 작업을 벌여왔다. ‘숭례문(국보 제1호)’이 이제서야 원래의 명칭에 담긴 뜻을 되살리게 되었다.
+            </div>
+            <div class="overflow1"> 
+                국보 제1호. 문화재 관리국은 1996년 11월 28일 광복 50주년 역사 바로 세우기 일환으로 일본식 표현, 부적절한 명칭, 역사왜곡, 우리역사와 무관한 유적, 가치평가의 왜곡 등을 주요 항목으로 설정하고 심의 작업을 벌여왔다. ‘숭례문(국보 제1호)’이 이제서야 원래의 명칭에 담긴 뜻을 되살리게 되었다.
+            </div>
+            <div class="overflow2"> 
+                국보 제1호. 문화재 관리국은 1996년 11월 28일 광복 50주년 역사 바로 세우기 일환으로 일본식 표현, 부적절한 명칭, 역사왜곡, 우리역사와 무관한 유적, 가치평가의 왜곡 등을 주요 항목으로 설정하고 심의 작업을 벌여왔다. ‘숭례문(국보 제1호)’이 이제서야 원래의 명칭에 담긴 뜻을 되살리게 되었다.
+            </div>
+        </div>
+        
+        <h4>visibility 속성</h4>
+        <div class="non-visibility"> visibility 박스의 화면 표시 여부</div>
+        <table>
+            <tr>
+                <td>행1-열1</td>
+                <td>행1-열2</td>
+            </tr>
+            <tr class="legacy">
+                <td>행2-열1</td>
+                <td>행2-열2</td>
+            </tr>
+        </table>
+        
+        <h4>resize 속성</h4>
+        <ul>
+            <li>사용자가 요소의 크기를 자유롭게 조정할 수 있도록 지정</li>
+            <li>값 -> none, both(폭/높이), horizental(폭), vertical(높이)</li>
+            <li>overflow: hidden | scroll | auto 속성과 함께 사용해야함</li>
+        </ul><br/>
+        
+        <div class="resize">resize 속성을 사용하면 사용자가 요소의 크기를 조정할 수 있다</div>
     </body>
-</html>
+    </html>
