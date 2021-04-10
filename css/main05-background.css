@@ -53,7 +53,7 @@ body { background-image: url('../img/orange.png'); background-repeat: no-repeat;
 .bg1 { padding: 30px; height: 250px; width: 350px; border: rgba(100,100,100,0.5) solid 30px; background: url('../img/orange.png') left top / auto repeat padding-box border-box scroll } /*-image -position -size -repeat -origin -clip -attachment */
 .bg2 { width: 500px;  height: auto; border: 1px solid teal; z-index: 4;
         background: url('../img/orange.png') 10% top / 50px auto no-repeat scroll,   
-        url('../img/orange.png') 10% 10% / auto no-repeat fixed,  
+        url('../img/orange.png') 50% 50% / auto no-repeat,  
         url('../img/orange.png') 75% bottom / 20% 20% no-repeat scroll; 
 } /*-image -position -size -repeat -origin -clip -attachment */
 
