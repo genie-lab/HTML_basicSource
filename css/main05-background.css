@@ -1,0 +1,58 @@
+* { margin: 0; outline: none;  font-size: 10pt; text-decoration-line: none; margin:5px; color: rgb(70, 70, 70); }
+table, th, td { border-collapse: collapse; border-spacing: 0; border: 1px solid slateblue; padding:10px;}
+th { background-color: hsla(330, 100%, 71%,0.8); color: white; text-align: center;}
+h4 { margin-top:100px; background-color: rgba(106, 90, 205,1.0); color: rgb(255, 255, 255);  margin-bottom: 10px; font-size: 1.2em; padding: 5px;}
+
+/********************************************************************/
+
+
+/*position 속성*/
+.position-exam { width: fit-content; border: 1px dashed royalblue; display:flex; padding:10px; } /*width: fit-content -> 가로싸이즈 지정: 컨텐츠만큼 가로 차지함. display:flex; 하위 수직정렬(div)을 가로정렬로 바꿈 == inline-block과 동일효과 */
+/*background-color 속성*/
+.color0 { background-color: skyblue; color: #000000 }
+.color1 { background-color: hsla(240, 100%, 50%, 0.3)} 
+.color2 { background-color: rgb(255,0,0) }
+.color3 { background-color: yellow }
+.color4 { background-color: transparent }
+/*background-image 속성*/
+.bg-img { height: 280px; width: 380px; border: 1px solid rebeccapurple; background-image: url('../img/moon.jpg'), url('../img/sun.jpg'), url('../img/flower.jpg'); }
+/*background-repeat 속성*/
+.bg-repeat1 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: no-repeat;}
+.bg-repeat2 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: repeat-x;}
+.bg-repeat3 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: repeat-y;}
+.bg-repeat4 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: repeat;}
+.bg-repeat5 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: space;}
+.bg-repeat6 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: round;}
+/*background-attachment 속성 -> 주석 풀어가며 확인 요망 */ 
+body { background-image: url('../img/orange.png'); background-repeat: no-repeat; background-attachment: scroll;}
+/* body { background-image: url('../img/orange.png'); background-repeat: no-repeat; background-attachment: fixed;} */
+
+
+/*background-repeat 속성*/
+.bg-position1 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: no-repeat; background-position: 250px 60px;} /*xpos(px,%): left, center, right // ypos(px,%): top, center, bottom */
+.bg-position2 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/orange.png'); background-repeat: no-repeat; background-position: 25% 75%;} 
+.bg-position3 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/bg-position.PNG'); background-repeat: no-repeat; background-size: contain; background-position: center; } /*contain  너비와 높이가 내용 안쪽에 알맞은 방식으로 이미지를 가장 크게 조절, position: center  가운데 정렬 */
+/*background-origin 속성*/
+.bg-origin1 { padding:30px; border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: no-repeat; background-origin:padding-box;} 
+.bg-origin2 { padding:30px; border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: no-repeat; background-origin:border-box;} 
+.bg-origin3 { padding:30px; border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: no-repeat; background-origin:content-box;} 
+/*background-clip 속성*/
+.bg-clip1 { padding:30px; color:rgba(32, 32, 32, 1); font-weight: bolder; border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: repeat; background-clip:padding-box;} 
+.bg-clip2 { padding:30px; color:rgba(32, 32, 32, 1); font-weight: bolder;  border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: repeat; background-clip:border-box;} 
+.bg-clip3 { padding:30px; color:rgba(32, 32, 32, 1); font-weight: bolder;  border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: repeat; background-clip:content-box;} 
+/*background-clip 속성*/
+.bg-size1 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:cover;} 
+.bg-size2 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:contain;} 
+.bg-size3 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:auto;} 
+.bg-size4 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:100px 100px;} 
+.bg-size5 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:100% 100%;} 
+.bg-size6 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:50% 50%;} 
+.bg-size7 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:50%;} 
+/*background 일괄 속성*/
+.bg1 { padding: 30px; height: 250px; width: 350px; border: rgba(100,100,100,0.5) solid 30px; background: url('../img/orange.png') left top / auto repeat padding-box border-box scroll } /*-image -position -size -repeat -origin -clip -attachment */
+.bg2 { width: 500px;  height: auto; border: 1px solid teal; z-index: 4;
+        background: url('../img/orange.png') 10% top / 50px auto no-repeat scroll,   
+                    url('../img/orange.png') 10% 10% / auto no-repeat fixed,  
+                    url('../img/orange.png') 75% bottom / 20% 20% no-repeat scroll; 
+     } /*-image -position -size -repeat -origin -clip -attachment */
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main05-background.css'>
+    <title>9,10강</title>
+</head>
+<body>
+    <h4>배경 관련 속성</h4>
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>background-color</td>
+                <td>요소의 배경색 지정. &lt;색상&gt;, transparent</td>
+            </tr>
+            <tr>
+                <td>background-image</td>
+                <td>요소의 배경으로 이미지 파일 지정. url('URL'), none </td>
+            </tr>
+            <tr>
+                <td>background-repeat</td>
+                <td>배경이미지의 반복 여부 결정. repeat, repeat-x, repeat-y, space, round </td>
+            </tr>
+            <tr>
+                <td>background-attachment</td>
+                <td>스크롤에 따른 배경이미지의 움직임 여부 지정. scroll, fixed, local </td>
+            </tr>
+            <tr>
+                <td>background-position</td>
+                <td>배경 이미지의 시작 위치 지정. &lt;x키워드 y키워드&gt;, &lt;x% y%&gt;, &lt;xpos ypos&gt; </td>
+            </tr>
+            <tr>
+                <td>background-clip</td>
+                <td>배경속성이 적용되는 영역지정. border-box, padding-box, content-box </td>
+            </tr>
+            <tr>
+                <td>background-origin</td>
+                <td>배경이미지가 시작하는 기준 위치 지정. padding-box, border-box, content-box </td>
+            </tr>
+            <tr>
+                <td>background-size</td>
+                <td>배경 이미지의 크기 지정. auto, &lt;폭 높이&gt;, &lt;폭% 높이%&gt;, cover, contain </td>
+            </tr>
+            <tr>
+                <td>background</td>
+                <td>배경관련 속성(background-*)의 일괄지정</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>background-color 속성</h4>
+    <ul>
+        <li>요소의 배경색 지정</li>
+        <li>값 → transparent (배경을 투명하게 지정), 색상 </li>
+    </ul>
+    <h5 class="color1"> 배경 색상 지정</h5>
+    <p class="color2"> 배경 <span class="color3">색상</span> 지정</p> 
+    <p class="color3"> 배경 <span class="color4">색상</span> 지정</p>
+
+    <h4>background-image 속성</h4>
+    <ul>
+        <li>요소의 배경으로 사용할 이미지 파일 지정</li>
+        <li>값 → none, url(URL) </li>
+    </ul>
+    <div class="bg-img"></div>
+
+    <h4>background-repeat 속성</h4>
+    <ul>
+        <li>배경 이미지의 반복 여부 지정</li>
+        <li>
+            값 → repeat, repeat-x, repeat-y, no-repeat, space, round<br/>
+            space : 배경을 채우는 영역의 경계에서 이미지가 잘려보이지 않도록 <strong>반복 이미지간의 공백조정</strong><br/>
+            round : 배경을 채우는 영역의 경계에서 이미지가 잘려보이지 않도록 <strong>이미지의 크기를 재설정</strong> 
+         </li>
+    </ul>
+    
+    <div class="position-exam">
+        <div class="bg-repeat1"></div>
+        <div class="bg-repeat2"></div>
+        <div class="bg-repeat3"></div><br/>
+    </div>
+    <div class="position-exam">
+        <div class="bg-repeat4"></div>
+        <div class="bg-repeat5"></div>
+        <div class="bg-repeat6"></div>
+    </div>
+    
+    <h4>background-attachment 속성</h4>
+    <ul>
+        <li>배경 이미지를 콘텐츠 영역과 함께 스크롤되도록 할 것인지의 여부 지정</li>
+        <li>
+            값 → scroll, fixed, local<br/>
+            scroll : 배경이미지가 콘텐츠 영역과 함께 스크롤 되도록 지정<br/>
+            fixed : 배경 이미지는 뷰포트에 고정되어 있고 콘텐츠 영역만 스크롤 되도록 지정<br/>
+            local : 요소 내부에서 스크롤이 발생할 경우, 요소 내부의 콘텐츠 영역과 함께 스크롤 되도록 지정 
+         </li>
+    </ul><br/>
+
+    <h4>background-position 속성</h4>
+    <ul>
+        <li>배경 이미지의 시작 위치 지정</li>
+        <li>기본위치 → 요소의 왼쪽 상단 모서리</li>
+    </ul><br/>
+    <div class="position-exam">
+        <div class="bg-position1"></div>
+        <div class="bg-position2"></div>
+        <div class="bg-position3"></div>
+    </div>
+
+    <h4>background-origin 속성</h4>
+    <ul>
+        <li>배경 이미지가 시작하는 기준 위치 지정</li>
+        <li>값 → padding-box, border-box, content-box</li>
+        <li>background-origin 속성은 배경 이미지가 시작하는 기준 위치를 지정하며,<br/> background-attachment 속성이 fixed로 지정되면동작하지 않는다.</li>
+    </ul><br/>
+    <div class="position-exam">
+        <div class="bg-origin1">background-origin 속성은 배경 이미지가 시작하는 기준 위치를 지정하며, background-attachment 속성이 fixed로 지정되면동작하지 않는다.</div>
+        <div class="bg-origin2">background-origin 속성은 배경 이미지가 시작하는 기준 위치를 지정하며, background-attachment 속성이 fixed로 지정되면동작하지 않는다.</div>
+        <div class="bg-origin3">background-origin 속성은 배경 이미지가 시작하는 기준 위치를 지정하며, background-attachment 속성이 fixed로 지정되면동작하지 않는다.</div>
+    </div>
+
+    <h4>background-clip 속성</h4>
+    <ul>
+        <li>배경 속성(색상, 이미지)이 적용되는 영역 지정</li>
+        <li>값 → border-box, padding-box, content-box</li>
+        <li>background-clip 속성은 배경 속성이 적용되는 영역을 지정한다.</li>
+    </ul><br/>
+    <div class="position-exam">
+        <div class="bg-clip1">background-clip 속성은 배경 속성이 적용되는 영역을 지정한다.</div>
+        <div class="bg-clip2">background-clip 속성은 배경 속성이 적용되는 영역을 지정한다.</div>
+        <div class="bg-clip3">background-clip 속성은 배경 속성이 적용되는 영역을 지정한다.</div>
+    </div>
+
+    <h4>background-size 속성</h4>
+    <ul>
+        <li>배경 이미지의 크기 지정</li>
+        <li>
+            값 → auto, &lt;폭_길이 높이_길이&gt;, &lt;폭% 높이%&gt;, cover, contain<br>
+            &lt;폭_길이 높이_길이&gt;, &lt;폭% 높이%&gt; : 하나의 값만 사용되면 높이는 auto로 처리<br/>
+            cover : 이미지의 폭과 높이 중 길이가 짧은 것을 기준으로 영역 채움. 원래 크기 비율 무시.
+            contain : 이미지의 폭과 높이 중 길이가 긴것을 기준으로 영역을 채움. 원래 크기 비율 유지.
+        </li>
+    </ul><br/>
+    <div class="position-exam">
+        <div class="bg-size1"></div>
+        <div class="bg-size2"></div>
+        <div class="bg-size3"></div>
+    </div>
+    <div class="position-exam">
+        <div class="bg-size4"></div>
+        <div class="bg-size5"></div>
+        <div class="bg-size6"></div>
+    </div>
+    <div class="position-exam">
+        <div class="bg-size7"></div>
+    </div>
+
+    <h4>background 속성</h4>
+    <ul>
+        <li>background-* 속성을 일괄적으로 지정</li>
+        <li> background: -color -image -position / -size -repeat -origin -clip -attachment </li>
+        <li>각 속성은 생략가능 </li>
+        <li>background-size 속성의 값은 반드시 '/' 를 사용해서 표시</li>
+        <li>배경 이미지를 여러 개 사용하면서 배경색을 지정하는 경우<br/> background-color 속성의 값을 리스트의 맨 뒤에 위치시킴</li>>
+        <li>한 번에 여러 개의 배경 이미지를 일괄적으로 지정하는 경우콤마로 구분</li>
+    </ul><br/>
+    <div class="position-exam">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+    </div>
+
+    <h4>테두리 관련 속성</h4>
+
+    
+    <ul>
+        <li>background-* 속성을 일괄적으로 지정</li>
+        <li> background: -color -image -position / -size -repeat -origin -clip -attachment </li>
+        <li>각 속성은 생략가능 </li>
+        <li>background-size 속성의 값은 반드시 '/' 를 사용해서 표시</li>
+        <li>배경 이미지를 여러 개 사용하면서 배경색을 지정하는 경우<br/> background-color 속성의 값을 리스트의 맨 뒤에 위치시킴</li>>
+        <li>한 번에 여러 개의 배경 이미지를 일괄적으로 지정하는 경우콤마로 구분</li>
+    </ul><br/>
+    <div class="position-exam">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+    </div>
+
+    
+</body>
+</html>

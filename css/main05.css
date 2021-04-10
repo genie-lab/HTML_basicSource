@@ -12,21 +12,13 @@ h4 { margin-top:100px; background-color: rgba(106, 90, 205,1.0); color: rgb(255,
 .text2 { text-decoration: overline;}
 .text3 { text-decoration: underline;}
 .text4 { text-decoration: line-through;}
-
 /*text-decoration 속성*/
 .text11 { text-decoration: overline red wavy;}
-.text12 { 
-            text-decoration-line: overline;
-            text-decoration-color: red ;
-            text-decoration-style: wavy;
-        }
-
+.text12 { text-decoration-line: overline; text-decoration-color: red ; text-decoration-style: wavy; }
 /*텍스트에 그림자 효과 지정*/
 .shadow1 { text-shadow: 0.2em 0.2em rgb(0,255,0); } /*기준: 텍스트 ::: 수평, 수직, 색상*/
 .shadow2 { text-shadow: 7px 7px 5px red; }/* 기준: 텍스트 ::::  수평, 수직, 흐림정도, 색상 */
 .shadow3 { text-shadow: 7px 7px red, -5px 5px 5px yellow, 7px -7px blue; }/* 기준: 텍스트 :::: h,v 양수일때 : 우측아래, h,v 음수일때 : 좌측 위 */
-
-
 /*word-wrap*/
 p.line { width:22em; border:2px solid #0000ff; }
 p.test0{ word-wrap:normal; }
@@ -36,7 +28,6 @@ p.test2{ word-break:normal; }/*하이픈 처리: 물론 한글에선 하이픈�
 p.test3{ word-break:break-all; }/*하이픈 처리 :  물론 한글에선 하이픈은 없다. 영어에 비유*/
 p.test4{ word-break:keep-all; } /*하이픈 없이 다음줄로 내려감*/
 span.word-break {color: red}
-
 /*display 속성*/
 .my-span0 { background-color: lightblue; display: none; }
 .my-span1 { background-color: lightblue; display: inline; }
@@ -83,7 +74,6 @@ span.padding-span { background-color: violet; color: white;}
 .position-exam { width: fit-content; border: 1px dashed royalblue; display:flex; padding:10px; } /*width: fit-content -> 가로싸이즈 지정: 컨텐츠만큼 가로 차지함. display:flex; 하위 수직정렬(div)을 가로정렬로 바꿈 == inline-block과 동일효과 */
 .box1 { display: flex; align-items: center; width:100px; height: 100px; background-color: crimson;}  /*display:flex 가로세로 영역만큼 모두 차지, align-item:center는 수직정렬 역할  */
 .box2 { display: flex; align-items: center; position:relative; top:20px; left:30px; width:100px; height: 100px; background-color: slateblue;} 
-
 .box3 { display: flex; align-items: center; width:100px; height: 100px; background-color: crimson;} 
 .box4 { display: flex; align-items: center; position:absolute; top:0px; left:30px; width:100px; height: 100px; background-color: yellowgreen;} 
 .in-box-span { text-align: center; color: white;}
