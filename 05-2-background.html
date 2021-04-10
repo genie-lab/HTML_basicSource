@@ -175,21 +175,248 @@
     </div>
 
     <h4>테두리 관련 속성</h4>
-
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>border-width</td>
+                <td>테두리의 굵기 지정 : medium, thin, thick &lt;길이&gt;</td>
+            </tr>
+            <tr>
+                <td>border-style</td>
+                <td>테두리의 스타일 지정 : none, hidden, dotte, dashed, solid, double, groove, ridge, insert, outset</td>
+            </tr>
+            <tr>
+                <td>border-color</td>
+                <td>테두리의 색상 지정 : &lt;색상&gt; 검정, transparent</td>
+            </tr>
+            <tr>
+                <td>border-color</td>
+                <td>테두리의 색상 지정 : border-width, border-style, border-color 속성을 한꺼번에 지정</td>
+            </tr>
+            <tr>
+                <td>border</td>
+                <td>border-top, border-right, border-bottom, border-left</td>
+            </tr>
+            <tr>
+                <td>border-radius</td>
+                <td>요소 박스의 각 모서리를 둥글게 지정: &lt;값&gt; {1,4} [/ &lt;값&gt;{1,4}]</td>
+            </tr>
+        </tbody>
+    </table>
     
-    <ul>
-        <li>background-* 속성을 일괄적으로 지정</li>
-        <li> background: -color -image -position / -size -repeat -origin -clip -attachment </li>
-        <li>각 속성은 생략가능 </li>
-        <li>background-size 속성의 값은 반드시 '/' 를 사용해서 표시</li>
-        <li>배경 이미지를 여러 개 사용하면서 배경색을 지정하는 경우<br/> background-color 속성의 값을 리스트의 맨 뒤에 위치시킴</li>>
-        <li>한 번에 여러 개의 배경 이미지를 일괄적으로 지정하는 경우콤마로 구분</li>
-    </ul><br/>
+    <h4>border-width 속성</h4>
+    <span class="bd-width border1">테두리 굵기</span>
+    <span class="bd-width border2">테두리 굵기</span>
+    <span class="bd-width border3">테두리 굵기</span>
+
+    <h4>border-style 속성</h4>
     <div class="position-exam">
-        <div class="bg1"></div>
-        <div class="bg2"></div>
+        <div class="bd-style border11">border-style:none</div>
+        <div class="bd-style border12">border-style:hidden</div>
+        <div class="bd-style border13">border-style:dotted</div>
+        <div class="bd-style border14">border-style:dashed</div>
+        <div class="bd-style border15">border-style:solid</div>
+        <div class="bd-style border16">border-style:double</div>
+    </div>
+    <div class="position-exam">
+        <div class="bd-style border17">border-style:groove</div>
+        <div class="bd-style border18">border-style:ridge</div>
+        <div class="bd-style border19">border-style:inset</div>
+        <div class="bd-style border20">border-style:outset</div>
     </div>
 
+    <h4>border-color 속성</h4>
+    <div class="position-exam">
+        <div class="bd-color bd-color1">border-top-color:violet; border-right-color:lightcoral; border-bottom-color:indianred; border-left-color: plum;</div>
+        <div class="bd-color bd-color2"> top right bottom left</div>
+        <div class="bd-color bd-color3">top bottom,  left right</div>
+    </div>
+
+    <h4>border 속성</h4>
+    <div class="position-exam">
+        <div class="bd bd1"> 테두리 속성(굵기, 스타일, 색상)의 일괄 지정 </div>
+        <div class="bd bd2"> 테두리 속성(굵기, 스타일, 색상)의 일괄 지정 </div>
+    </div>
     
+    <h4>border-radius 속성</h4>
+    <div class="position-exam">
+    <div class="bd-radius bd-radius1"> 요소 박스의 각 모서리를 둥글게 지정 border-color: red; border-radius: 5px 20px 35px 50px; </div>
+    <div class="bd-radius bd-radius2"> 요소 박스의 각 모서리를 둥글게 지정 border-color: blue; border-radius: 5% 15% 25% 35%; </div>
+    <div class="bd-radius bd-radius3"> 요소 박스의 각 모서리를 둥글게 지정 border-color: green; border-radius: 10%; </div>
+    <div class="bd-radius bd-radius4"> 요소 박스의 각 모서리를 둥글게 지정 border-color: pink; border-radius: 15px / 40px; </div>
+    </div>
+
+    <h4>border-shadow 속성</h4>
+    <ul>
+        <li>박스의 그림자 스타일 지정</li>
+        <li>값 → none, &lt;그림자&gt;</li>
+    </ul>
+    <div class="position-exam">
+        <div class="box1 shadow1"> 박스1 : 그림자1 box-shadow: 10px 10px blue </div>
+        <div class="box1 shadow2"> 박스1 : 그림자2 box-shadow: 10px 10px 10px blue</div>
+        <div class="box1 shadow3"> 박스1 : 그림자3 box-shadow: 10px 10px 10px 10px blue </div>
+    </div>
+    <div class="position-exam">
+        <div class="box2 shadow4"> 박스1 : 그림자4 box-shadow: 10px 15px red inset </div>
+        <div class="box2 shadow5"> 박스1 : 그림자5 box-shadow: 10px 15px 20px red inset </div>
+        <div class="box2 shadow6"> 박스1 : 그림자6 box-shadow: 10px 15px 20px 10px red inset </div>
+    </div>
+    
+    <h4>목록 속성 & 테이블 속성</h4>
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>list-style-type</td>
+                <td>
+                    항목 마커의 종류 지정<br/>
+                    disc, circle, square, decimal, lower-alpha, upper-alpha, lower-roman, upper-roman
+                </td>
+            </tr>
+            <tr>
+                <td>list-style-position</td>
+                <td>
+                    항목 마커의 위치 지정<br/>
+                    inside, outside
+                </td>
+            </tr>
+            <tr>
+                <td>list-style-image</td>
+                <td>
+                    이미지를 항목 마커로 지정<br/>
+                    none, url('이미지파일')
+                </td>
+            </tr>
+            <tr>
+                <td>list-style</td>
+                <td>
+                    목록속성의 일괄지정(생략된 속성값은 기본값 사용)<br/>
+                    list-style:list-style-type값, list-style-position값, list-style-image값;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+   
+    <h5>list-style-type 속성 -> 순서 없는 목록 표시</h5>
+    <ul>
+        <li class="none">목록 표시 마크 없음: none 
+        <li class="ul1"> 디스크: disc</li>
+        <li class="ul2"> 원:circle</li>
+        <li class="ul3"> 사각형: square</li>
+    </ul><br/>
+    <h5>list-style-type 속성 -> 순서 있는 목록 표시</h5>
+    <ol>
+        <li class="ol1"> 10진수: decimal</li>
+        <li class="ol2"> 소문자 로마숫자: lower-roman </li>
+        <li class="ol3"> 대문자 로마숫자: upper-roman </li>
+        <li class="ol4"> 소문자 알파벳: lower-alpha</li>
+        <li class="ol5"> 대문자 알파벳: upper-alpha</li>
+    </ol><br/>
+    <h4>list-style-image, list-style-position 속성</h4>
+    <div>리스트 항목의 기본 마커와 위치</div>
+    <ul>
+        <li> list-style-type: disc(기본)</li>
+        <li> list-style-position: outside(기본)</li>
+    </ul><br/>
+    <div>이미지 마커와 위치(인사이드)</div>
+    <ul class="list1">
+        <li>list-style-image: url(orange.gif)</li> 
+        <li>list-style-position: inside</li>
+    </ul></br/>
+    <div>이미지 마커와 위치(아웃사이드)</div>
+    <ul class="list2">
+        <li>list-style-image: url(orange.gif)</li> 
+        <li>list-style-position: outside</li>
+    </ul>
+
+    <h4>테이블 관련 속성</h4>
+    <table>
+        <thead>
+            <th>속성</th>
+            <th>설명</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>table-layout</td>
+                <td>
+                    셀안의 내용 크기에 따른 셀 크기의 변화여부.<br/>
+                    auto → 열의 폭이 셀의 내용의 크기에 따라 결정되므로 테이블 크기가 자동으로 조정됨<br/>
+                    fixed → 셀의 내용의 크기와 상관없이 테이블 또는 셀의 폭에 의해서만 결정됨
+                </td>
+            </tr>
+            <tr>
+                <td>border-collapse</td>
+                <td>
+                    테이블 테두리와 셀 테두리를 하나의 테두리로 합칠 지의 여부.<br/>
+                    separate → 두 테두리를 분리해서 표시<br/>
+                    collapse → 두 테두리를 하나로 합쳐서 표시.(border-spacing과 empty-cells 속성이 무시됨)
+                </td>
+            </tr>
+            <tr>
+                <td>border-spacing</td>
+                <td>
+                    인접한 셀 테두리 사이의 여백 거리 지정.  &lt;수평거리&gt; &lt;수직거리&gt; (0)<br/>
+                </td>
+            </tr>
+            <tr>
+                <td>border-side</td>
+                <td>
+                    테이블 캡션의 위치 지정. <br/>
+                    top → 테이블 상단에 표시<br/>  bottom → 테이블 하단에 표시
+                </td>
+            </tr>
+            <tr>
+                <td>empty-cells</td>
+                <td>
+                    빈 셀의 테두리와 배경의 표시 여부.  <br/>
+                    show, hide
+                </td>
+            </tr>
+        </tbody>
+    </table><br/>
+
+    <table border="1">
+        <caption> 기본 테이블</caption>
+        <tr> 
+            <td>HTML 웹프로그래밍</td>
+            <td>CSS</td> 
+        </tr> 
+        <tr> 
+            <td>Javascript</td>
+            <td></td> 
+        </tr>
+    </table> <br/>
+
+    <table class="table1" border="1">
+        <caption> 캡션: auto separate top 10px 10px hide </caption>
+        <tr> 
+            <td>HTML 웹프로그래밍</td>
+            <td>CSS</td> 
+        </tr> 
+        <tr> 
+            <td>Javascript</td>
+            <td></td> 
+        </tr>
+    </table> <br/>
+
+    <table class="table2" border="1">
+        <caption> 캡션: fixed collapse bottom </caption>
+        <tr> 
+            <td>HTML 웹프로그래밍</td>
+            <td>CSS</td> 
+        </tr> 
+        <tr> 
+            <td>Javascript</td>
+            <td></td> 
+        </tr>
+    </table> <br/>
+
 </body>
 </html>

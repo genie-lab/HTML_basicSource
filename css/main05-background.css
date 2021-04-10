@@ -1,4 +1,5 @@
 * { margin: 0; outline: none;  font-size: 10pt; text-decoration-line: none; margin:5px; color: rgb(70, 70, 70); }
+/*테두리 속성 실습 확인시 table CSS 주석 처리 하세요*/
 table, th, td { border-collapse: collapse; border-spacing: 0; border: 1px solid slateblue; padding:10px;}
 th { background-color: hsla(330, 100%, 71%,0.8); color: white; text-align: center;}
 h4 { margin-top:100px; background-color: rgba(106, 90, 205,1.0); color: rgb(255, 255, 255);  margin-bottom: 10px; font-size: 1.2em; padding: 5px;}
@@ -40,7 +41,7 @@ body { background-image: url('../img/orange.png'); background-repeat: no-repeat;
 .bg-clip1 { padding:30px; color:rgba(32, 32, 32, 1); font-weight: bolder; border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: repeat; background-clip:padding-box;} 
 .bg-clip2 { padding:30px; color:rgba(32, 32, 32, 1); font-weight: bolder;  border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: repeat; background-clip:border-box;} 
 .bg-clip3 { padding:30px; color:rgba(32, 32, 32, 1); font-weight: bolder;  border: rgba(100,100,100,0.5) solid 30px; background-image: url('../img/orange.png'); background-repeat: repeat; background-clip:content-box;} 
-/*background-clip 속성*/
+/*background-size 속성*/
 .bg-size1 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:cover;} 
 .bg-size2 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:contain;} 
 .bg-size3 { height: 250px; width: 350px; border: 1px solid teal; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:auto;} 
@@ -52,7 +53,66 @@ body { background-image: url('../img/orange.png'); background-repeat: no-repeat;
 .bg1 { padding: 30px; height: 250px; width: 350px; border: rgba(100,100,100,0.5) solid 30px; background: url('../img/orange.png') left top / auto repeat padding-box border-box scroll } /*-image -position -size -repeat -origin -clip -attachment */
 .bg2 { width: 500px;  height: auto; border: 1px solid teal; z-index: 4;
         background: url('../img/orange.png') 10% top / 50px auto no-repeat scroll,   
-                    url('../img/orange.png') 10% 10% / auto no-repeat fixed,  
-                    url('../img/orange.png') 75% bottom / 20% 20% no-repeat scroll; 
-     } /*-image -position -size -repeat -origin -clip -attachment */
+        url('../img/orange.png') 10% 10% / auto no-repeat fixed,  
+        url('../img/orange.png') 75% bottom / 20% 20% no-repeat scroll; 
+} /*-image -position -size -repeat -origin -clip -attachment */
 
+/*border-width 속성*/
+.bd-width { border:blue solid; background-color: white; }
+.border1 { border-top-width:thin; border-right-width: medium; border-bottom-width: thick; border-left-width:20px; }
+.border2 { border-width:thin medium thick 20px; } /*1px 3px 5px 굵기*/
+.border3 { border-width:thick 15px; } 
+/*border-style 속성*/
+.bd-style { background-color: teal; color:white; border-color: yellow; border-width: 10px; margin:20px; padding: 20px; text-align:center;}
+.border11 { border-style:none}
+.border12 { border-style:hidden}
+.border13 { border-style:dotted}
+.border14 { border-style:dashed}
+.border15 { border-style:solid}
+.border16 { border-style:double}
+.border17 { border-style:groove}
+.border18 { border-style:ridge}
+.border19 { border-style:inset}
+.border20 { border-style:outset}
+/*border-color 속성*/
+.bd-color { border:solid; background-color:moccasin; border-width: 20px; text-align: center; padding: 20px; }
+.bd-color1 { border-top-color:violet; border-right-color:lightcoral; border-bottom-color:indianred; border-left-color: plum; }
+.bd-color2 { border-color:violet lightcoral indianred plum; }  /* top right bottom left */
+.bd-color3 { border-color:violet  indianred; } /* top bottom,  left right*/
+/*border 속성*/
+.bd { font-size: 14pt; background-color:silver; }
+.bd1 { border-top:10px double blue; border-right: medium solid green; border-bottom:thick dotted #f00; border-left:20px dashed yellow; }
+.bd2 { border:10px dashed red}
+/*border-radius 속성*/
+.bd-radius { font-size: 14pt; font-weight: 700; text-align: center; border:5px solid; padding:10px;  }
+.bd-radius1 { border-color: red; border-radius: 5px 20px 35px 50px;}
+.bd-radius2 { border-color: blue; border-radius: 5% 15% 25% 35%;}
+.bd-radius3 { border-color: green; border-radius: 10%;}
+.bd-radius4 { border-color: pink; border-radius: 15px / 40px;}
+/*border-shadow 속성*/
+/*<수평위치>  <수직위치>, [ <그림자_흐림_정도> <그림자_퍼진_거리> <색상> inset:내부그림자 ] */
+.box1 { float:left; height:40px; border:2px solid; margin:15px; padding:20px; border-radius:25px 0; }
+.box2 { float:left; height:50px; border:2px solid; margin:15px; padding:20px; border-radius:10px 15px 20px 25px; }
+.shadow1 { box-shadow: 10px 10px blue } /*수평위치, 수직위치, 색상*/
+.shadow2 { box-shadow: 10px 10px 10px blue } /*수평위치, 수직위치, 흐림정도, 색상*/
+.shadow3 { box-shadow: 10px 10px 10px 10px blue }/*수평위치, 수직위치, 흐림정도, 그림자퍼진거리, 색상*/
+.shadow4 { box-shadow: 10px 15px red inset }/*수평위치, 수직위치, 색상, 내부그림자 */
+.shadow5 { box-shadow: 10px 15px 20px red inset }/*수평위치, 수직위치, 그림자흐린정도, 색상, 내부그림자*/
+.shadow6 { box-shadow: 10px 15px 20px 10px red inset }/*수평위치, 수직위치, 그림자흐림정도, 그림자퍼진거리, 색상, 내부그림자*/
+
+/*list-style-type 속성*/
+.none { list-style-type: none }
+.ul1 { list-style-type: disc }
+.ul2 { list-style-type: circle }
+.ul3 { list-style-type: square }
+.ol1 { list-style-type: decimal }
+.ol2 { list-style-type: lower-roman } 
+.ol3 { list-style-type: upper-roman } 
+.ol4 { list-style-type: lower-alpha } 
+.ol5 { list-style-type: upper-alpha }
+/*list-style-image, list-style-position 속성*/
+.list1 { list-style-image: url('../img/round-orange.png'); list-style-position: inside; } /*-image -position -size -repeat -origin -clip -attachment */
+.list2 { list-style-image: url('../img/full-orange.png'); list-style-position: outside; }
+/*테이블 관련 속성*/
+.table1 {  width: 300px; table-layout: auto; border-collapse: separate; caption-side: top; border-spacing: 20px 20px; empty-cells: hide } 
+.table2 {  width: 300px; table-layout: fixed; border-collapse: collapse; caption-side: bottom;  } 
