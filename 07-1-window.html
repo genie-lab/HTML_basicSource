@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>창크기와 위치지정</title>
+</head>
+<body onLoad="window.resizeTo(500,350)">
+    <h4>창의 크기와 위치 지정</h4>
+    <ul>
+        <li>
+            창에 대한 전반적인 모든 상황을 제어하는 최상위 객체
+        </li>
+        <li>
+            창의 크기
+            <ul>
+                <li>resizeBy(폭,높이) → 창의 크기를 상대적인 크기 만큼 변경</li>
+                <li>resizeTo(폭,높이) → 창의 크기를 지정된 절대 크기로 변경</li>
+            </ul>
+        </li>
+        <li>
+            창의 위치
+            <ul>
+                <li>moveBy(x,y) → 창을 현재 위치에서 상대적인 양만큼 이동</li>
+                <li>moveTo(x좌표,y좌표) → 창을 임의의 절대 위치로 이동</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>브라우저 크기 조정</p>
+    <input type="button" onClick="sizeUp()" value="확대">
+    <input type="button" onClick="sizeDown()" value="축소"><br/><br/><hr/>
+    <p>브라우저 위치 조정</p>
+    <input type="button" onClick="moveUp()" value="상">
+    <input type="button" onClick="moveDown()" value="하">
+    <input type="button" onClick="moveLeft()" value="좌">
+    <input type="button" onClick="moveRight()" value="우">
+    <script>
+        function sizeUp() { window.resizeBy(20, 20); }
+        function sizeDown() { window.resizeBy(-20, -20); }
+        function moveUp() { window.moveBy(0, -20); }
+        function moveDown() { window.moveBy(0, 20); }
+        function moveLeft() { window.moveBy(-20, 0); }
+        function moveRight() { window.moveBy(20, 0); }
+    </script>        
+</body>
+</html>

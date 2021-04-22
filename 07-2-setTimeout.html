@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>창크기와 위치지정</title>
+</head>
+<body onLoad="showTime();">
+    <h4>setTimeout() 메서드</h4>
+    <ul>
+        <li>
+            지정한 시간 후에 특정 코드(함수)를 실행시키는 메서드<br/>
+            timerID = setTimeout("호출함수", 지연시간)<br/>
+            clearTimeout(timerID) : setTimeout()으로 설정된 내용을 해제/중지하는 함수
+        </li>
+    </ul>
+    <div id="clock"></div>
+    <script>
+        function showTime() {
+            today = new Date();
+            today = today.toLocaleString();
+            var clock = document.getElementById("clock");
+            clock.style.backgroundColor = "yellow";
+            clock.style.color = "blue";
+            clock.style.fontWeight = "bold";
+            clock.innerHTML = today;
+        }
+    </script>
+</body>
+    
+</html>

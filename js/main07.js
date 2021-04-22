@@ -1,45 +1,6 @@
 
 window.onload = function () {
 
-    // (function () {
-    //     var dateDiv = document.getElementById('date');
-    //     var now = new Date();
-    //     // var str = '<ul>\n';
-
-    //     // for (var i = 0; i < 4; i++) {
-    //     //     let data = null;
-    //     //     switch (i) {
-    //     //         case 0: data = "기본 형식 : " + now; break;
-    //     //         case 1: data = "toGMTString() 형식: " + now.toGMTString(); break;
-    //     //         case 2: data = "toLocaleString() 형식: &nbsp;" + now.toLocaleString(); break;
-    //     //         case 3: data = "toString() 형식: &nbsp;" + now.toString(); break;
-    //     //         default: break;
-    //     //     }
-    //     //     str += "<li id=date-string" + i + ">" + i + "번째 : " + data + "</li>\n";
-    //     // }
-    //     // str += '</ul>\n';
-    //     // dateDiv.innerHTML = str;
-
-
-    //     //  http://ezcode.kr/study/view/222
-    //     var ul = document.createElement('ul');
-    //     for (var i = 0; i < 4; i++) {
-    //         var li = document.createElement('li');
-    //         switch (i) {
-    //             case 0: data = "기본 형식 : " + now; break;
-    //             case 1: data = "toGMTString() 형식: " + now.toGMTString(); break;
-    //             case 2: data = "toLocaleString() 형식: &nbsp;" + now.toLocaleString(); break;
-    //             case 3: data = "toString() 형식: &nbsp;" + now.toString(); break;
-    //             default: break;
-    //         }
-    //         li.innerHTML = i + "번째 : " + data;
-    //         ul.appendChild(li)
-    //     }
-    //     dateDiv.appendChild(ul);
-    // })();
-
-
-
     //무명함수
     // id사용
     ( function(){
@@ -158,6 +119,75 @@ window.onload = function () {
             parent.removeChild(child);
         }
 
+        //open(), close() 메서드(07popup.html안에 소스 있음)
+        document.getElementById("btn08").addEventListener('click', winOpen)
+        function winOpen() {
+            window.open("07-popup.html","_blank","width=450, height=300"); //연결할 URL, 타킷, 창의 이름, 옵션리스트
+        }
+        
+        //setTimeout() 메서드
+       // 시간을 딜레이 없이 나타내기위한 선 실행
+        showTime();
+        // 이후 0.5초에 한번씩 시간을 갱신한다.
+        setInterval(showTime, 500);
+       
+        function showTime() {
+            today = new Date();
+            today = today.toLocaleString();
+            var clock = document.getElementById("clock");
+            clock.style.backgroundColor = "yellow";
+            clock.style.color = "blue";
+            clock.style.fontWeight = "bold";
+            clock.innerHTML = today;
+        }
+
+        //clearTimeout() 메서드
+        var timerID = 5
+        show(timerID);
+        //setInterval(show(timerID), 500);
+
+        function show(timerID) {
+        
+            for(var i=timerID; 0 <= i; i--){
+                console.log("i=== 0000   " + i);
+                var myArea01 = document.getElementById("myArea01");
+                
+                if ( i == 0 ) {
+                    console.log("i=== 1111   " + i);
+                    
+                    clearTimeout(i);
+                    location.replace("07-popup.html");
+                    break;
+                } 
+                        myArea01.innerHTML = (i+"초 후에 새 문서가 표시됩니다.");
+                        myArea01.style.backgroundColor = "pink";
+                        myArea01.style.color = "blue";
+                        myArea01.style.fontWeight = "bold";
+                        myArea01.style.fontSize = "30pt";
+                console.log("i===    " + i);
+            
+            }
+        }
+        
+        // clearTimeout(timerID);
+        // location.replace("07-popup.html");
+
+        
+
+        // if (timerID < 1 ) {
+        //     clearTimeout(timerID);
+        //     location.replace("07-popup.html");
+        // } 
+        // else { 
+        //     myArea = document.getElementById("myArea");
+        //     myArea.innerHTML = (n+"초 후에 새 문서가 표시됩니다.");
+        //     myArea.style.backgroundColor = "yellow";
+        //     myArea.style.color = "blue";
+        //     myArea.style.fontWeight = "bold";
+        //     myArea.style.fontSize = "30pt";
+        //     setTimeout("Show(" + (timerID - 1) + ")", 500);
+            
+        // }
 
     } )();
 
