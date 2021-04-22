@@ -1,0 +1,12 @@
+/* .box {display: flex; width: fit-content;} */
+table, th, td { border-collapse: collapse; border-spacing: 0; border: 1px solid slateblue; padding:10px;}
+h4 { margin-top:100px; background-color: rgba(106, 90, 205,1.0); color: rgb(255, 255, 255);  margin-bottom: 10px; font-size: 1.2em; padding: 5px;}
+.red{ width: 100px; height: 100px; margin-top:15px; background-color: red;}
+.green{ width: 100px; height: 100px; margin-top:15px; background-color: green;}
+.display-none { display: none;}
+.pink{ background-color: pink;}
+.square{width: 80%; height: 50px; border: 1px dashed blueviolet;} 
+.font-red {color:red}
+.font-green {color:green}
+.position-exam { width: fit-content; border: 1px dashed royalblue; display:flex; padding:10px; } /*width: fit-content -> 가로싸이즈 지정: 컨텐츠만큼 가로 차지함. display:flex; 하위 수직정렬(div)을 가로정렬로 바꿈 == inline-block과 동일효과 */
+

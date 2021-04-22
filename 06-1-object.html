@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main06.css'>
+    <script src="./js/main06.js"></script>
+
+    <title>11,12강</title>
+</head>
+<body onunload="goodbye()"> 
+    <h4 id="object">객체</h4>
+    <ul>
+        <li>객체 object</li>
+        <li>자바스크립트의 작업대상 -> 가장 기본적인 자료형</li>
+        <li>실세계의 사물을 모델링하기 위해 변수와 함수를 그룹화 한것</li>
+        <li>속성 property -> 객체의 특성/상태를 표현하기 위한 데이터</li>
+        <li>메소드 method -> 객체와 관련된 작업을 처리하는 함수</li>
+        <li>데이터를 동작하는 규칙이나 방법</li>
+        <li>종류 -> 내장객체(String, Date, Array, Math등), 사용자 정의객체</li>
+        <li>객체 생성 -> 사용자 정의 객체, 객체 정의 -> 일반함수와 동일한 형식의 생성자 함수 이용</li>
+    </ul>
+    
+    <script>
+        function Student (name, dept, grade) {  // 사용자 정의 객체
+            this.name = name; 
+            this.dept = dept;
+            this.grade = grade; 
+            this.print = function () {  
+                document.write(this.name + "은 " + this.dept + "과 " + this.grade + "학년 학생입니다 <br/>" );
+            }
+        }
+
+        s1 = new Student("고영희", "컴퓨터과학", 3);   // 객체 생성
+        s2 = new Student("김댕댕", "통계학", 1); // 객체 생성
+        cDate = new Date();      // 내장 객체의 사용
+        document.write("[" + (cDate.getMonth() + 1) + "월" + cDate.getDate()+"일 현재]<br/>");
+    
+        s1.print();
+        s2.print();
+    </script>
+
+
+    <h4>기존 객체에 속성/메서드 추가</h4>
+    <p>생성자 함수 변경 없이 값을 대입하는 문장을 직접 사용</p>
+    <script>
+        function Student (name, dept, grade) {  // 사용자 정의 객체
+            this.name = name; 
+            this.dept = dept;
+            this.grade = grade; 
+            this.print = function () {  
+                document.write(this.name + "은 " + this.dept + "과 " + this.grade + "학년 학생입니다 <br/>" );
+            }
+        }
+
+        s1 = new Student("고영희", "컴퓨터과학", 3);   // 객체 생성
+    
+        s1.region="서울";
+        s1.subject=function(){
+            document.write("학생이름: "+this.name+"<br/>");
+            document.write("소속지역대학: "+this.region+"<br/>"); 
+            document.write("수강과목: 컴퓨터과학개론, 알고리즘, HTML5<br/>");
+        }
+        s1.subject();
+    </script>
+
+    <h4>속성 및 메서드의 공유</h4>
+    <p>prototype 객체사용</p>
+    <script>
+        // proto 타입으로 전환
+        function Student (name, dept, grade){
+            this.name= name;
+            this.dept= dept;
+            this.grade=grade;
+        }
+        
+        Student.prototype.print=function(){
+            document.write(this.name + "은 " + this.dept + "과 " + this.grade + "학년 학생입니다 <br/>" );
+        }
+        Student.prototype.classroom=function(){
+            switch ( this.grade ) {
+                case 1 : this.room = "103호";  break; 
+                case 2 : this.room = "801호";  break; 
+                case 3 : this.room = "508호";  break; 
+                case 4 : this.room = "406호";  break; 
+                default : this.room = "아직 미정인 교실";
+            }
+
+            document.write( this.grade + "햑년 " + this.dept + "과 교실은 " + this.room + " 입니다 <br/>" );
+        }
+
+        //객체 생성 (예: 100개 생성)
+        s1 = new Student("고영희", "컴퓨터과학", 5);   // 객체 생성
+        s2 = new Student("김댕댕", "통계학", 1);   // 객체 생성
+        s3 = new Student("이차돌", "유통학", 2);   // 객체 생성
+        // .... 무한정 
+        s1.print();
+        s1.classroom();
+    </script>
+
+    <h4>이벤트</h4>
+    <p>어떤 특정한 사건이나 동작 "마우스 버튼을 클릭하는 경우(이벤트) 웹페이지의 배경색을 변경(이벤트 핸들러)"
+        특정 이벤트에 대응하는 원하는 처리내용을 이벤트 핸들러로 작성하고 등록
+        해당 이벤트가 발생하면 자동으로 등록된 이벤트 핸들러 수행
+    </p>
+    <button id="myBtn">지금 시간은요?</button>
+    <div id="time"></div><br/>
+    <button id="red-bg" >레드</button>
+    <button id="green-bg" >그린</button>
+    <div id="bg1"></div>
+    <div id="bg2"></div>
+
+    <script>
+        // 이벤트 발생
+        document.getElementById("myBtn").addEventListener("click", displayDate); 
+        // 수행함수
+        function displayDate(){
+            document.getElementById("time").innerHTML= Date();
+        }
+        
+        document.getElementById("red-bg").addEventListener("click", red); 
+        document.getElementById("green-bg").addEventListener("click", green); 
+        function red(){
+            document.getElementById("bg1").className = "red";
+            document.getElementById("bg2").className = "display-none";
+        }
+        function green(){
+            document.getElementById("bg2").className = "green";
+            document.getElementById("bg1").className = "display-none";
+        }
+    </script>
+
+    <h4>주요 이벤트 </h4>
+    <iframe id="load-event" src="http://www.knou.ac.kr" name="view" width="600" height="300" ></iframe>
+    <div id="load-result"></div>
+
+    <form id="myForm">
+        focus 이벤트 확인 : <input type="text" id="myInput"><br/>
+        blur 이벤트 확인 : <input type="text" id="myblur" required><br/>
+        change 이벤트 확인 : <input type="text" id="mychange"><br/>
+        select 이벤트 확인 : <input type="text" id="myselect"><span id="select-result"></span><br/>
+        keydown 이벤트 확인 : <input type="text" id="mykeydown"><br/>
+        keyup 이벤트 확인 : <input type="text" id="mykeyup"><br/>
+        keypress 이벤트 확인 : <input type="text" id="mykeypress"><br/>
+        reset 이벤트 확인 : <input type="reset" id="myreset"><br/>
+    </form>
+    <hr>
+    <p id="mydbclick">더블클릭하세요</p>
+    <p id="mymouse">mymouse down up 이벤트 확인, 클릭하세요</p>
+
+    <div class="square" id="mymousemove"></div>
+    <p id="mousemove-reult"></p>
+
+    <p id="mymouseover">마우스를 갖다 대세요</p>
+    
+    <script>
+        // 이벤트 load  브라우저에서 웹 문서를 모두 읽어 왔을 때 발생
+        document.getElementById("load-event").addEventListener("load", myOnload); 
+        function myOnload(){
+            document.getElementById("load-result").innerHTML="load 되었음"; 
+        }
+
+        // 이벤트 unload  브라우저의 웹 문서를 닫을 때 발생
+        function goodbye(){
+            alert("닫힐때 unload");
+            /*
+                onunload 정의
+                페이지가 언로드되거나 브라우저 창을 닫으면 발생.
+                1. 사용자가 페이지를 탐색 할 때 발생 
+                (링크를 클릭하거나 양식을 제출하거나 브라우저 창을 닫음 등).
+                2. 사용자가 페이지 (및 onload 이벤트) 다시로드할 때도 발생.
+                3. 브라우저에 따라 작동 안 할 수 있음.
+                4. 지원 HTML 태그: <body> HTML element (요소)에는 주로 body가 옴.
+                   JS object (객체)에는 주로 window가 옴.
+            */
+        }
+
+        // 이벤트 focus  윈도우, 폼, 구성요소가 포커스를 받을 때 발생
+        let x = document.getElementById("myInput");
+        x.addEventListener("focusin", myFocusFunction);
+        x.addEventListener("focusout", myBlurFunction);
+        
+        function myFocusFunction() {
+            document.getElementById("myInput").style.backgroundColor = "#F0E68C";
+        }
+        
+        function myBlurFunction() {
+            document.getElementById("myInput").style.backgroundColor = "";
+        }
+
+        // 이벤트 blur  포커스를 잃을 때 발생
+        let y = document.getElementById("myblur");
+            y.addEventListener("blur", myBlur);
+            function myBlur() {
+                alert("포커스가 벗어났습니다");
+            }
+
+        // 이벤트 change  입력양식의 값이 변경되었을 때 발생
+        let z = document.getElementById("mychange");
+            z.addEventListener("change", myChange);
+            function myChange() {
+                document.getElementById("mychange").value = z.value.toUpperCase();
+            }
+        // 이벤트 reset  입력양식을 초기화시켰을 때 발생
+        let a = document.getElementById("myreset");
+        a.addEventListener("reset", myReset);
+        function myReset() {
+            a.innerHTML = "The form was reset";
+        }
+        // 이벤트 select  입력양식의 내용 중 특정 내용을 선택하였을 때 발생
+        let b = document.getElementById("myselect");
+        b.addEventListener("select", mySelect);
+        function mySelect() {
+            document.getElementById("select-result").innerHTML = "You selected some text!";
+        }
+
+        // 이벤트 keydown  키보드의 키를 누르는 순간 발생
+        let c = document.getElementById("mykeydown");
+        c.addEventListener("keydown", myKeydown);
+        function myKeydown() {
+            document.getElementById("mykeydown").className = "pink";
+        }
+        
+        // 이벤트 keyup  키보드의 키를 누른 후 놓았을 때
+        let d = document.getElementById("mykeyup");
+        d.addEventListener("keyup", myKeyup);
+        function myKeyup() {
+            d.value = d.value.toUpperCase();
+        }
+        
+        // 이벤트 keypress  키보드의 키를 눌렀다 놓는 순간 발생 텍스트 넣어야함
+        let e = document.getElementById("mykeypress");
+        e.addEventListener("keypress", myKeypress);
+        function myKeypress() {
+            e.className = "pink";
+        }
+        // 이벤트 dblclick  마우스를 더블클릭하는 순간 발생
+        let f = document.getElementById("mydbclick");
+        f.addEventListener("dblclick", myDblclick);
+        function myDblclick() {
+            f.innerHTML = "나는 더블클릭 되었어요";
+        }
+        // 이벤트 mousedown  마우스 버튼을 누르는 순간 발생
+        let g = document.getElementById("mymouse");
+        g.addEventListener("mousedown", myMousedown);
+        // 이벤트  mouseup 마우스 버튼을 클릭했다 놓는 순간 발생
+        g.addEventListener("mouseup", myMouseup);
+        function myMousedown() {
+            g.innerHTML = "마우스 버튼은 Mousedown 이벤트를 붙잡고 있어요";
+        }
+        function myMouseup() {
+            g.innerHTML = "마우스 버튼은 Mousedown 이벤트를 놓은 상태입니다(mouseup)";
+        }
+        
+        // 이벤트 mousedown  마우스가 움직일 때마다 발생
+        let h = document.getElementById("mymousemove");
+        h.addEventListener("mousemove", function(e){
+            myMousemove(e);
+        });
+        function myMousemove(e) {
+            let x_pos = e.clientX;
+            let y_pos = e.clientY;
+            let coor = "Coordinates: (" + x_pos + "," + y_pos + ")";
+            document.getElementById("mousemove-reult").innerHTML=coor;
+        }
+        
+        // 이벤트 mousedown  마우스 커서를 링크 위에 올려놓을 때 발생
+        let m = document.getElementById("mymouseover");
+        m.addEventListener("mouseover", myMouseover);
+        m.addEventListener("mouseout", myMouseout);
+        function myMouseover() {
+            m.className = "font-red";     
+        }
+        function myMouseout() {
+            m.className = "font-green";     
+        }
+        
+        </script>
+
+<h4>String 객체</h4>
+<script>
+        //http://ezcode.kr/study/view/179  권장사항 참조
+        let str="자바 스크립트 (javascript)";
+        let str1= "JavaScript Programming";
+        let styles = null;
+        for (i = 0; i <= 24; i++) { 			
+            switch ( i ) {
+                case 0 : styles = str.big();  break; //글자 크기를 현재 글자보다 한 단계 크게 지정
+                case 1 : styles = str.small();  break; //글자 크기를 현재 글자보다 한 단계 작게 지정
+                case 2 : styles = str.bold();  break; //글자를 굵게 지정
+                case 3 : styles = str.italics();  break; //자바스크립트(JavaScript)
+                case 4 : styles = str.strike();  break; //글자 가운데를 통과하는 선을 그음
+                case 5 : styles = str.sub();  break; //글자를 아래첨자 형태로 출력
+                case 6 : styles = str.sup();  break; //글자를 위첨자 형태로 출력
+                case 7 : styles = str.fontcolor("blue");  break; //글자 색상 지정
+                case 8 : styles = str.fontsize(6);  break; //글자 크기 지정(1~7)
+                case 9 : styles = str.link("http://www.knou.ac.kr");  break; //이동할 곳의 URL를 지정
+                case 10 : styles = str.link("#object");  break; // 이동할 곳의 URL를 지정
+                case 11 : styles = str.anchor("#object");  break; //이동할 현재 페이지의 특정 위치를 지정
+                case 12 : styles = str1.toLowerCase();  break; //소문자로 변환
+                case 13 : styles = str1.toUpperCase();  break; //대문자로 변환
+                case 14 : styles = str1.substring(4, 18);  break; //n1부터 n2 이전까지의 문자열 반환
+                case 15 : styles = str1.slice(4, 18);  break; //n1부터 n2 이전까지의 문자열 반환
+                case 16 : styles = str1.substr(4, 18);  break;  //n1부터 n2개 만큼의 문자열 반환
+                case 17 : styles = str1.charAt(4);  break;  //인덱스 n에 대응되는 문자를 반환
+                case 18 : styles = str1.indexOf("p");  break;  //왼쪽에서부터 지정된 문자열의 위치 반환
+                case 19 : styles = str1.lastIndexOf("a");  break;  //오른쪽에서부터 지정된 문자열의 위치 반환
+                case 20 : styles = str1.concat(" !!!");  break;  //JavaScript Programming !!!
+                case 21 : styles = str1.replace('JavaScript', 'JS');  break;  //문자열1을 문자열2로 대체
+                case 22 : styles = str1.split(" ", 2);  break;  //JavaScript,Programming 분리자를 기준으로 [개수]만큼 문자열로 분리
+                case 23 : styles = str1.charCodeAt(4);  break;  //인덱스 n에 대응되는 문자의 유니코드 번호를 반환
+                case 24 : styles = String.fromCharCode(83);  break;  //유니코드 번호를 문자열로 반환
+                default : break;
+            }   
+            document.write("<div id= big" + i +">"+i+"번째 : "+ styles +"</div>");           
+        }
+    </script>
+
+    <h4>Array 객체</h4>
+    <p id="array-ex"></p>
+    <script>
+        var arr = new Array(3);
+        // arr = [ 10,"JavaScript", "Programming" ];
+        arr[0] = 10;
+        arr[1] = "JavaScript";
+        arr[2] = "Programming";
+        var text = arr.join(', ');
+       
+        document.getElementById("array-ex").innerHTML="배열의 길이는 " + arr.length + "이고 배열요소는 "+ text +"이다"; 
+        
+        var LISTS = ['LandAnimaljoin', 'SeaAnimaljoin', 'indexOf', 'push', 'shift', 'revrse', 'concat', 'sort', 'pop', 'slice'];
+
+        for (var i = 0; i < LISTS.length; i++) { 
+            var LandAnimal = ["호랑이", "사자", "표범"];
+            var SeaAnimal = new Array ("참치", "고래");;			
+            console.log("sd" + LandAnimal[0]);
+            var array_st; // 자료형은 아무거나 다
+            switch ( i ) {
+                case 0 : array_st = LandAnimal.join();  break; //배열의 값들을 결합해서하나의 문자열을 만듦
+                case 1 : array_st = SeaAnimal.join();  break; //배열의 값들을 결합해서하나의 문자열을 만듦
+                case 2 : array_st = LandAnimal.indexOf("사자");  break; // 값을 가진 요소의 인덱스를 반환
+                case 3 : 
+                        LandAnimal.push("치타");
+                        array_st =  LandAnimal;
+                        // console.log("sd" + LandAnimal);
+                        // for (var value=0; i<LandAnimal.length; i++) {
+                        //     console.log("LandAnimal[0]"); // 10, 20, 30
+                        // }
+                        break; // 스택에 데이터를 삽입
+                case 4 : LandAnimal.shift(); // 앞에 삽입  
+                         array_st = LandAnimal.join(" -> "); 
+                         break; // 배열의 첫 번째 요소를 반환/제거
+                case 5 : array_st = LandAnimal.reverse(); 
+                         break; // 배열 요소들의 순서를 역순으로 만듦
+                case 6 : var animal = LandAnimal.concat(SeaAnimal); 
+                         array_st = animal.join(" -> ");
+                         break; // 두 개의 배열을 하나의 배열로 만듦
+                case 7 : array_st = animal.sort();  break; // 배열을 정렬
+                case 8 : animal.pop();  
+                         array_st = animal.join(" -> ");
+                         break; // 스택에서 데이터를 삭제
+                case 9 : substr = animal.slice(1,3);  
+                         array_st = substr.join(" -> ");
+                         break; // 시작인덱스~(종료인덱스-1)까지를 추출해서 새로운 배열을 만듦
+                
+                default : break;
+            }   
+            document.write("<div id= ddd" + i +">"+LISTS[i]+" : "+ array_st +"</div>");           
+        }
+   
+   
+   </script>
+
+   <h4>Date 객체</h4>
+   사용자 시스템의 날짜와 시간을 관리해 주는 객체<br>
+   객체변수명 = new Date(년, 월, 일, [, 시[, 분[, 초[, 밀리초]]]] )
+   <div id="date_ex" style="color: rebeccapurple;"> </div>
+
+   <script>
+
+       
+       date = new Date();
+    
+        document.write("<p> 현재 날짜/시간 :  "); 
+        document.write("[ " + date.getFullYear() + "년 "); 
+        document.write((date.getMonth()+1) + "월 "); 
+        document.write(date.getDate() + "일");
+        console.log("day"+ date.getDay() );
+        
+        switch ( date.getDay() ) {
+            case 0 : day = " 일요일 "; break; 
+            case 1 : day = " 월요일 "; break; 
+            case 2 : day = " 화요일 "; break; 
+            case 3 : day = " 수요일 "; break; 
+            case 4 : day = " 목요일 "; break; 
+            case 5 : day = " 금요일 "; break; 
+            case 6 : day = " 토요일 "; break; 
+        }
+
+        if (date.getHours() >= 12 ) {
+            AmPm = "오후 ";
+            hr = date.getHours()-12; 
+            time = AmPm + hr;
+            if ( hr==0 ){
+                 hr=12; 
+                document.write(hr + "시 "); 
+                time = hr + "시 ";
+            }
+        } else {
+            AmPm = "오전 ";
+            document.write(date.getHours() + "시 ");
+            time = AmPm + date.getHours() + "시 ";
+        }
+        document.write(date.getMinutes() + "분 "); 
+        document.write(date.getSeconds() + "초"); 
+        document.write(" ]</p>");
+
+        document.getElementById("date_ex").innerHTML = 
+       "현재 날짜/시간 : [ " + + date.getFullYear() + "년 " + (date.getMonth()+1) + "월 "
+        + date.getDate() + "일 day " + day + time + date.getMinutes() + "분 "
+        + date.getSeconds() + "초 ]";
+
+
+   </script>
+
+<h4>Date 객체</h4>
+날짜와 시간의 표시 형식을 지정하는 메서드
+  
+<div id="date"></div>
+
+
+<h4>Math 객체</h4>
+수학 계산과 관련된 객체
+<div> new 연산자 없이 바로 사용 → Math.속성, Math.메서드()</div>
+<div id="math-ex"></div>
+<script>
+  exp = new Array( );
+    op = new Array("abs(-2.1)", "ceil(3.45)", "floor(3.45)", "exp(3)", "round(3.45)",  
+            "max(5, 7)", "min(5, 7)", "pow(3,4)",  "sqrt(6)", "PI");
+    exp[0] = Math.abs(-2.1); // 2.1
+    exp[1] = Math.ceil(3.45); // 4
+    exp[2] = Math.floor(3.45); // 3
+    exp[3] = Math.exp(3); // 20.085536923187668
+    exp[4] = Math.round(3.45); // 3 
+    exp[5] = Math.max(5, 7); // 7 
+    exp[6] = Math.min(5, 7); // 5
+    exp[7] = Math.pow(3, 4); // 81
+    exp[8] = Math.sqrt(6); // 2.449489742783178
+    exp[9] = Math.PI; // 3.141592653589793
+    n = Math.floor(Math.random()*op.length);  // 0 ≤ 난수 < 1 //  0~9까지 
+    document.getElementById("math-ex").innerHTML = "Math 객체의 " + op[n] + "을 적용한 연산 결과 : " + exp[n];
+</script>
+
+<h4>screen 객체</h4>
+화면의 정보를 나타내는 객체
+<div> new 연산자 없이 바로 사용 → screen.속성</div>
+<script>
+    document.write("<p>순수 화면의 높이(availHeight) : "+ screen.availHeight+"</p>");
+    document.write("<p>순수 화면의 너비(availWidth) : "+ screen.availWidth+"</p>");
+    document.write("<p>디스플레이 화면의 높이(height) : "+ screen.height+"</p>");
+    document.write("<p>디스플레이 화면의 너비(width) : "+ screen.width+"</p>");
+    document.write("<p>사용 가능한 색상 수(colorDepth) : "+ screen.colorDepth+"</p>");
+</script>
+
+<!--
+
+    해야할 것 
+    1. ul 안에 li 넣기 ok
+    2. 반복문으로  array 표현하기 ok
+    3. js파일 따로 구분하기 ok
+    4. 문서 전체 보기좋게 정리하기 오늘 다 하기~!!
+
+-->
+
+</body>
+</html>
