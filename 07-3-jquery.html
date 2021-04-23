@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main07.css'>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>jQuery</title>
+</head>
+<body>
+    <img src="./img/lion.jpg"><br/>
+    <img src=""/>
+    <button id="show">그림보이기</button>
+    <button id="hide">그림숨기기</button><br/><br/>
+    <div id="msg">마우스 이벤트</div>
+    <script> 
+    $(document).ready( function () { //웹페이지 완전 로드될때까지 기다린 후 함수실행
+        //$(선택자).메서드( [ 매개변수, … ] )
+        $("#hide").click(function(){
+            $("img").hide();
+        });
+        $("#show").click(function(){
+            $("img").show();
+        });
+    });
+
+    //축약형식
+    $(function(){
+        // //이벤트처리
+        // $("#hide").bind("click",function(){    })
+        // //이벤트처리 축약
+        // $("#hide").click(function(){  });
+
+
+        // event.which == https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/which  내용 참조하세요!
+        $("#msg").mouseenter( function () { 
+            $(this).text("mouseenter (마우스가 요소 안으로 들어올 때) 이벤트");
+            $(this).css("background-color", "cyan");
+        });
+
+        $("#msg").mouseleave( function () { 
+            $(this).text("mouseleave (마우스가 요소 밖으로 나갈 때) 이벤트");
+            $(this).css("background-color", "lightblue");
+        });
+
+        $("#msg").mousedown( function (e) { 
+            $(this).text(e.type+" (마우스 "+e.which+" 버튼을 (" +e.pageX+","+e.pageY+")에서 누를 때) 이벤트");
+            $(this).css("background-color", "lightgreen");
+        });
+        
+        $("#msg").mouseup( function (e) { 
+            $(this).text(e.type+" (마우스 "+e.which+" 버튼을 (" +e.pageX+","+e.pageY+")에서 뗄 때) 이벤트");
+            $(this).css("background-color", "lightyellow");
+        });
+
+
+    });
+    </script>
+</body>
+</html>

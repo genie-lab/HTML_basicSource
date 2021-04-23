@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>창크기와 위치지정</title>
+</head>
+<body onLoad="showTime();">
+    <h4>setTimeout() 메서드</h4>
+    <ul>
+        <li>
+            지정한 시간 후에 특정 코드(함수)를 실행시키는 메서드<br/>
+            timerID = setTimeout("호출함수", 지연시간)<br/>
+            clearTimeout(timerID) : setTimeout()으로 설정된 내용을 해제/중지하는 함수
+        </li>
+    </ul>
+    <div id="clock"></div>
+    <button id="btn09">다시시작</button>
+    <button id="btn10">일시정지</button>
+    <span id="myArea" ></span>
+    <script>
+        //setInterval
+        document.getElementById("btn09").addEventListener('click',showTime);
+        document.getElementById("btn10").addEventListener('click',pauseClock);
+
+        var timeID;
+        function showTime() {
+            var clock = document.getElementById("clock");
+            clock.style.backgroundColor = "pink";
+            clock.style.color = "gray";
+            clock.style.fontWeight = "bold";
+            timeID = setInterval(function(){
+                            today = new Date();
+                            today = today.toLocaleString();
+                            clock.innerHTML = today;
+                        },500);
+        }
+
+        function pauseClock(){
+            clearInterval(timeID);
+        }
+
+        // setTimeout,clearTimeout
+        show(10); //10초로 지정
+        function show(n) { 
+            if (n < 1 ) {
+                clearTimeout(timerID);
+                location.replace("07-popup.html");
+            } else { myArea = document.getElementById("myArea");
+                myArea.innerHTML = (n+"초 후에 새 문서가 표시됩니다.");
+                myArea.style.backgroundColor = "yellow";
+                myArea.style.color = "blue";
+                myArea.style.fontWeight = "bold";
+                myArea.style.fontSize = "30pt";
+                timerID = setTimeout("show(" + (n - 1) + ")", 1000);
+            }
+        }
+
+    </script>
+</body>
+    
+</html>

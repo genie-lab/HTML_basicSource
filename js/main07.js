@@ -8,7 +8,6 @@ window.onload = function () {
         document.getElementById("btn01").addEventListener("click", print); 
         // 수행함수
         function print () {
-            console.log("click")
             document.getElementById("main01").innerHTML = "Hi EveryOne!";
         }
 
@@ -69,10 +68,8 @@ window.onload = function () {
             //하이픈은 특수문자라서 정규식 이용
             var stringVal = document.getElementById("change-style01").innerText;
             var stringNew = stringVal.replace(/\-/g,"");
-            console.log(stringVal  +"-----------------------------"+ stringNew );
             if(stringVal.includes("-")){ //포함하면
                 var stringNew = stringVal.replace(/\-/g," ");
-                console.log(stringVal + "=================" + stringNew);
                 document.getElementById("change-style02").innerHTML = stringNew;
                 document.getElementById("change-style02").style.backgroundColor="yellow";
             }
@@ -125,70 +122,6 @@ window.onload = function () {
             window.open("07-popup.html","_blank","width=450, height=300"); //연결할 URL, 타킷, 창의 이름, 옵션리스트
         }
         
-        //setTimeout() 메서드
-       // 시간을 딜레이 없이 나타내기위한 선 실행
-        showTime();
-        // 이후 0.5초에 한번씩 시간을 갱신한다.
-        setInterval(showTime, 500);
-       
-        function showTime() {
-            today = new Date();
-            today = today.toLocaleString();
-            var clock = document.getElementById("clock");
-            clock.style.backgroundColor = "yellow";
-            clock.style.color = "blue";
-            clock.style.fontWeight = "bold";
-            clock.innerHTML = today;
-        }
-
-        //clearTimeout() 메서드
-        var timerID = 5
-        show(timerID);
-        //setInterval(show(timerID), 500);
-
-        function show(timerID) {
-        
-            for(var i=timerID; 0 <= i; i--){
-                console.log("i=== 0000   " + i);
-                var myArea01 = document.getElementById("myArea01");
-                
-                if ( i == 0 ) {
-                    console.log("i=== 1111   " + i);
-                    
-                    clearTimeout(i);
-                    location.replace("07-popup.html");
-                    break;
-                } 
-                        myArea01.innerHTML = (i+"초 후에 새 문서가 표시됩니다.");
-                        myArea01.style.backgroundColor = "pink";
-                        myArea01.style.color = "blue";
-                        myArea01.style.fontWeight = "bold";
-                        myArea01.style.fontSize = "30pt";
-                console.log("i===    " + i);
-            
-            }
-        }
-        
-        // clearTimeout(timerID);
-        // location.replace("07-popup.html");
-
-        
-
-        // if (timerID < 1 ) {
-        //     clearTimeout(timerID);
-        //     location.replace("07-popup.html");
-        // } 
-        // else { 
-        //     myArea = document.getElementById("myArea");
-        //     myArea.innerHTML = (n+"초 후에 새 문서가 표시됩니다.");
-        //     myArea.style.backgroundColor = "yellow";
-        //     myArea.style.color = "blue";
-        //     myArea.style.fontWeight = "bold";
-        //     myArea.style.fontSize = "30pt";
-        //     setTimeout("Show(" + (timerID - 1) + ")", 500);
-            
-        // }
-
     } )();
 
     

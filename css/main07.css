@@ -7,7 +7,7 @@ div#inner { background-color: lightgreen }
 div#text { background-color: yellow }
 .bg-size2 { width: 350px; height: 220px; margin-bottom: 20px; background-image: url('../img/lion.jpg'); background-repeat: no-repeat; background-size:contain;} 
 #btn09 { background-color: darkorange; }
-
+div#msg { width: 450px; border: 1px solid black; padding-left: 10px; }
 
 
 
