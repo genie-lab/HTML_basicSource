@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/main08.css" rel="stylesheet"/>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    <title>15강</title>
+</head>
+<body>
+    <h4>요소의 내용 및 속성 조작 메서드</h4>
+    <ul>
+        <li>text() -> 요소의 텍스트 콘텐츠를 가져오거나 수정할 때 사용</li>
+        <li>html() -> 요소의 HTML 태그가 포함된 텍스트 콘텐츠를 가져오거나 수정</li>
+        <li>val() -> 입력양식에서 사용자가 입력/선택한 값을 가져올 때 사용</li>
+        <li>attr() -> 요소의 속성값을 가져오거나 기존 값을 수정할 때 사용</li>
+    </ul>
+    <!--text(), html() 메서드_텍스트 콘텐츠 가져오기-->
+    <span id="mydiv">
+        <b>요소의 텍스트 콘텐츠 가져오기  </b>
+    </span><br/><br/> 
+    <button id="text">text() 가져오기</button>  
+    <button id="html">html() 가져오기</button>
+
+    <script>
+        $(document).ready( function () { 
+            $("#text").click( function () { alert( $("#mydiv").text() ); });
+            $("#html").click( function () { alert( $("#mydiv").html() ); });  
+        });
+    </script>
+
+    <!--text(), html() 메서드_텍스트 콘텐츠 수정하기-->
+    <br/><br/>
+    <button id="text1">text() 수정하기</button>  
+    <button id="html1">html() 수정하기</button>
+
+    <script>
+        $(document).ready( function () { 
+            $("#text1").click( function () { 
+                $("#mydiv").text("<b><i>text() 메서드</i>를 통한 텍스트 콘텐츠 수정</b>");
+            });
+            $("#html1").click( function () { 
+                $("#mydiv").html("<b><i>html() 메서드</i>를 통한 텍스트 콘텐츠 수정</b>");
+            });  
+        });
+    </script>
+
+    <!--val() 메서드-->
+    <br/>
+    <br/>
+    학년: <input type="text" id="grade"><br/> 
+    이름: <input type="text" id="name"><br/><br/> 
+    <button id="check">입력값 확인</button> 
+    <hr/>
+    <div id="value"></div>
+
+    <script>
+        $(document).ready( function () { 
+            $("#check").click( function () { 
+                $("#value").text($("#grade").val()+"학년 "+ $("#name").val()+"입니다.");
+            }); 
+        });
+    </script>
+
+    <!--attr() 메서드_속성값 가져오기-->
+    <br/>
+    <br/>
+    <p>이미지를 클릭해보세요!!</p> 
+    <img id="getAttr" src="./img/lion.jpg" height="100" width="150"> <hr/>
+    <div id="myImg"></div>
+
+    <script>
+        $(document).ready( function() { 
+            $("img#getAttr").click( function () { 
+                var imgURL = $(this).attr("src");
+                var imgHeight = $(this).attr("height");
+                var imgWidth = $(this).attr("width");
+                $("#myImg").html("파일명: "+imgURL+ "<br/>이미지 높이: "+imgHeight+ "px <br/>이미지 폭: "+imgWidth+"px");
+            });
+        });
+    </script>
+
+    <!--attr() 메서드_속성값 설정하기-->
+    <br/>
+    <br/>
+    <p>이미지를 변경하려면 이미지를 클릭하세요!!</p> 
+    <img src="./img/moon.jpg" id="moon" height="100">
+
+    <p id="three">3개의 이미지를 표시하려면 <b>나를</b> 클릭하세요!!</p> 
+    <img id="flower"> <img id="flower"> <img id="flower">
+    <script>
+        $(document).ready( function() { 
+            $("img#moon").click( function () { 
+                $(this).attr({ src: "./img/desert.jpg", width: 100, height: 150 });
+            });
+
+            // $(선택자).attr( 속성명, function (index, currentValue) { … } )
+            $("#three").click( function () { 
+                $("img#flower").attr( { 
+                    src: "./img/lion.jpg", 
+                    width: function (index) { return (index+1)*35 }, height: 75 } );
+            });
+        });
+    </script>
+    
+    <h4>메서드 체이닝</h4>
+    <ul>
+        <li>동일한 요소에 대해서 여러 메서드를 연속적으로 적용</li>
+        <li>메서드를 연결하여 하나의 문장으로 만들어서 사용</li>
+    </ul>
+    <p id="clickLion">사자를 보려면 클릭</p> 
+    <img id="imgChaining"> 
+    <script>
+        $(document).ready( function() { 
+            $("#clickLion").click( function () {
+                $("#imgChaining").attr("src", "./img/lion.jpg").attr("width", 280).attr("height", 200);
+                // 동일  -> method chaining 
+                // $("#imgChaining").attr(src, "sun.jpg");
+                // $("#imgChaining").attr(width, 250);
+                // $("#imgChaining").attr(height, 100);
+            });
+        });
+    </script>
+
+    <h4>removeAttr() 메서드</h4>
+    <ul>
+        <li>선택된 요소에서 하나 이상의 속성 삭제</li>
+    </ul>
+    <span class="bgcolor" style="color:red; font-weight:bold"> 
+        텍스트를 클릭하면 스타일이 삭제됩니다.</span> 
+    <script>
+        $(document).ready( function() { 
+            $("span.bgcolor").click( 
+                function() {
+                    $(this).removeAttr("class style");
+            });
+        });
+    </script>
+    
+    <h4>스타일 속성</h4>
+    <ul>
+        <li>css() 메서드</li>
+        <ul>
+            <li>$(선택자).css(속성명)</li>
+            <li>$(선택자).css(속성명, 값)</li>
+            <li>$(선택자).css( {속성명1: 값1, 속성명2: 값2, … } )</li>
+            <li>$(선택자).css(속성명, function (index, …) { … … } )</li>
+        </ul>
+        <li>CSS 속성명이 하이픈('-')을 포함하고 있는 경우</li>
+        <ul>
+            <li>예: font-size → "font-size" 또는 fontSize</li>
+        </ul>
+    </ul>
+    <!--css() 메서드_스타일 속성값 가져오기-->
+    <span id="container">css() 메서드_스타일 속성값 가져오고(클릭시) 조작하기(hover시)</span>
+    <script>
+        $(document).ready( function() { 
+            $("#container").click( 
+                function () { 
+                    alert( $(this).css("border") );
+            });
+
+            //css() 메서드_요소의 스타일 지정하기
+            $("#container").hover( 
+                function () { 
+                    $(this).css({ "background-color": "red", borderRadius: "10px", "font-weight": "bold", color: "white" });
+                }, 
+                function () { 
+                    $(this).css({ "background-color": "", borderRadius: "", "font-weight": "", color: "" });
+                }
+            );
+        });
+    </script>
+
+
+    <h4>클래스 속성</h4>
+    <ul>
+        <li>class 속성을 편집하기 위한 메서드</li>
+        <ul>
+            <li>addClass() -> 선택된 요소에 하나 이상의 클래스명 추가</li>
+            <li>removeClass() -> 선택된 요소로부터 하나 이상의 클래스명 삭제</li>
+            <li>toggleClass() -> 선택된 요소로부터 클래스명의 추가와 삭제를 번갈아 가면서 수행</li>
+        </ul>
+    </ul>
+    <!--addClass(), removeClass(), toggleClass()-->
+    <span id="box">addClass()와 removeClass()</span><br/><br/>
+    <button id="btn">toggleClass(): 버튼을 눌러 보세요</button><br/>
+    <script>
+        //"./css/main08.css"
+        //.hover { background-color: cyan; border-radius: 10px; font-weight: bold; color: red; } 
+        //.toggle { font-size: 15pt; color: white; background-color: black; }
+        $(document).ready( function() { 
+            $("#box").hover( 
+                function () { 
+                    $(this).addClass("hover");
+                }, 
+                function () { 
+                    $(this).removeClass("hover");
+                }
+            );
+
+            $("#btn").click( function () { 
+                $(this).toggleClass("toggle");
+            });
+        });
+    </script>
+
+
+    <h4>DOM 요소 편집</h4>
+    <ul>
+        <li>요소 추가</li>
+        <ul>
+            <li>
+                $(선택자).append(콘텐츠) -> = $(콘텐츠).appendTo(선택자) <br/>
+                선택된 기존 요소 안에서 끝부분에 새로운 콘텐츠 삽입
+            </li>
+            <li>$(선택자).prepend(콘텐츠) -> = $(콘텐츠).prependTo(선택자)<br/>
+                선택된 기존 요소 안에서 시작부분에 새로운 콘텐츠 삽입
+            </li>
+            <li>
+                $(선택자).before(콘텐츠) -> = $(콘텐츠).insertBefore(선택자)<br/>
+                선택된 요소의 앞에 새로운 콘텐츠 삽입
+             </li>
+            <li>
+                $(선택자).after(콘텐츠) -> = $(콘텐츠).insertAfter(선택자)<br/>
+                선택된 요소의 뒤에 새로운 콘텐츠 삽입
+             </li>
+        </ul>
+    </ul>
+    <!--append(), prepend() 메서드-->
+    <p>방송통신</p>
+    <hr/>
+    <ul>
+        <li> HTML 웹프로그래밍</li>
+        <li> 알고리즘</li>
+    </ul>
+    <button id="btn01">p 요소에 콘텐츠 추가</button> 
+    <button id="btn02">리스트에 항목 추가</button>
+
+    <!--before(), after() 메서드-->
+    <br/><br/>
+    <img src="./img/university.png" id="university" width="200px"><br/>
+    <button id="btn03">before() 메서드</button>
+    <button id="btn04">after() 메서드</button>
+
+    <!--기존 요소의 삭제-->
+    <br/><br/>
+    <div id="div1" class="div1">
+        <h3>div 영역: remove() 적용</h3>
+        <p>선택된 요소는 삭제</p>
+        <p>모든 자식 요소도 삭제</p>
+    </div>
+    <div id="div2" class="div2">
+        <h3>div 영역: empty() 적용</h3>
+        <p>선택된 요소는 남고,</p>
+        <p>모든 자식 요소는 삭제</p>
+    </div>
+    <br style="clear: both"/><br/>
+    <button id="btn05">remove() 메서드</button>
+    <button id="btn06">empty() 메서드</button>
+    <script>
+        $(document).ready( function() { 
+            $("#btn01").click( function() {
+                $("p").prepend("<b>한국</b>"); 
+                $("p").append("<b>대학교</b>");
+            });
+
+            $("#btn02").click( function() {
+                $("ul").prepend("<li><b>컴퓨터과학개론</b></li>");
+                $("ul").append("<li><b>HTML5</b></li>");
+            });
+
+            $("#btn03").click( function() {
+                $("#university").before("<b> before()로 내용 추가 </b>");
+            });
+            
+            $("#btn04").click( function() {
+                $("#university").after("<b> after()로 내용 추가 </b>");
+            });
+
+            $("#btn05").click( function() {
+                $("#div1").remove();
+            });
+            $("#btn06").click( function() {
+                $("#div2").empty();
+            });
+        });
+    </script>
+
+
+
+<h4>jQuery 효과</h4>
+<div>
+    <img src="./img/jquerypic.PNG"/>
+</div>
+<!--append(), prepend() 메서드-->
+
+
+<!--Hide/Show 효과-->
+<!--선택한 요소를 화면에서 감추거나 보여 주는 효과-->
+<button id="hide">hide()</button>
+<button id="show">show()</button><br/>
+<div>
+    <img id="showLion" src="./img/lion.jpg">
+</div><br/><br/>
+
+<!--toggle() 메서드-->
+<hr>
+<button id="toggle">toggle()</button>
+<br/>
+<img id="togleLion" src="./img/lion.jpg" style="display:none">
+
+<!--hide(속도, 콜백함수), show(속도, 콜백함수)-->
+<hr>
+<div id="speed">
+    <p>hide (2000, 콜백함수(빨간색 메시지))</p>
+    <p>show (fast, 콜백함수(파란색 메시지))</p>
+</div><br/>
+<button id="show01">show(속도,콜백함수)</button>
+<button id="hide01">hide(속도,콜백함수)</button><br/>
+<p id="msg"></p>
+    
+<!--페이드 효과-->
+<!--선택한 요소의 불투명도가 시간에 따라 변하면서 요소가 점차적으로 밟게 표시되거나 어둡게 표시-->
+<hr>
+<button id="btn1">빨간 박스가 페이드인됩니다.</button>
+<br/><br/>
+<div id="div3" style="display: none">fadeIn()</div><br/>
+<div id="div4">fadeOut() 클릭</div>
+
+<!--fadeToggle() 메서드-->
+<hr>
+<button id="btn2">fadeToggle()</button><br/><br/>
+<div id="div5">fadeToggle()</div>
+
+<!--fadeTo() 메서드-->
+<hr>
+<div class="position-exam">
+    <div id="div6">fadeTo( , 0.1, ) 클릭</div>
+    <div id="div7">fadeTo( , 0.3, ) 클릭</div>
+    <div id="div8">fadeTo( , 0.6, ) 클릭</div>
+</div>
+<script>
+    $(document).ready( function() { 
+
+        $("#hide").click( function () {
+            $("#showLion").hide();
+        });
+        $("#show").click( function () {
+            $("#showLion").show();
+        });
+
+        $("#toggle").click( function () {
+            $("#togleLion").toggle();
+        });
+
+        $("#show01").click( function () {
+            $("div").show("fast", function () {
+                $("#msg").css("color", "blue");
+                $("#msg").text(" div 요소가 화면에 표시되었습니다!");
+            });
+        });
+        
+        $("#hide01").click( function () {
+            $("div").hide(2000, function () {
+                $("#msg").css("color", "red");
+                $("#msg").text(" div 요소가 화면에서 사라졌습니다!");
+            });
+        });
+
+        $("#btn1").click( function() {
+            $("#div3").fadeIn( 1000, function() {
+                $("#btn1").hide();
+            });
+        });
+
+        $("#div4").click( function() {
+            $("#div4").after("<b>초록색 박스가 페이드아웃되었습니다.</b><br/>");
+            $(this).fadeOut( "slow" );
+        });
+
+
+        $("#btn2").click( function() {
+            $("#div5").fadeToggle( "fast" );
+        });
+
+        $("#div6, #div7, #div8").click( function() {
+            $("#div6").fadeTo("slow", 0.1);
+            $("#div7").fadeTo("fast", 0.3);
+            $("#div8").fadeTo("2000", 0.6);
+        });
+
+
+    });
+</script>
+
+
+
+<h4>슬라이드 효과</h4>
+<ul>
+    <li>선택한 요소를 위쪽이나 아래쪽으로 밀어내는 효과</li>
+</ul>
+
+<!--slideUp(), slideDown(), slideToggle()-->
+<div id="question">
+    <b>
+        <span class="green">[질문] </span>
+        슬라이드 효과를 지정하는 메서드의 종류는?
+    </b><br/>
+    <span class="green">정답을 확인하려면 클릭하세요!!</span>
+</div>
+<div id="answer">
+    <b>정답</b>
+    <ol>
+        <li>slideUp()</li>
+        <li>slideDown()</li>
+        <li>slideToggle()</li>
+    </ol>
+</div>
+
+<script>
+    $(document).ready( function() { 
+
+        $("#question").click( function() {
+            $("#answer").slideToggle( 500 );
+        });
+
+        $("#answer").click( function() {
+            $(this).slideUp("slow");
+        });
+
+
+    });
+</script>
+
+
+
+<h4>애니메이션 효과</h4>
+<img src="./img/animation.PNG"/>
+
+<!--animate() 메서드-->
+<div>
+    <button id="btn07">시작</button><br/><br/>
+</div>
+<div id="div9">left, opacity, height, width 속성</div>
+
+<script>
+    $(document).ready( function() { 
+
+        $("#btn07").click( function() {
+            $("#div9").animate({
+                left: '200px',
+                opacity: '0.5',
+                height: '200px',
+                width: '100px'
+            }, 3000);
+        });
+
+    });
+</script>
+
+</body>
+</html>

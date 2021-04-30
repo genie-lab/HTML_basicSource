@@ -1,0 +1,30 @@
+h4 { margin-top:100px; background-color: rgba(106, 90, 205,1.0); color: rgb(255, 255, 255);  margin-bottom: 10px; font-size: 1.2em; padding: 5px;}
+.bgcolor { background-color: yellow }
+span#container { width: 600px; height: 25px; padding: 0 20px;  border: 1px solid black; }
+span#mydiv { height: 30px; font-size: 15pt; border: 1px solid black; padding:0 20px; }
+.hover { background-color: plum; border-radius: 10px; font-weight: bold; color: blueviolet; padding:0 20px; } 
+.toggle { font-size: 1.2em; color: white; background-color: chocolate; }
+#div1 { display: inline-block; max-width: 100%; height: 100%; background-color: hotpink; color: white; padding: 10px; }
+#div2 { display: inline-block; width: 200px; height: 136px; background-color: cornflowerblue; color: white; padding: 10px; }
+div#speed { height: 100px; width: 300px; padding-left: 10px; border:1px solid black; background-color: lightyellow; }
+#div3 { width: 100px; height: 100px; background-color: red; }
+#div4 { width: 100px; height: 100px; background-color: green }
+#div5 { width: 100px; height: 100px; background-color: lightblue }
+
+.position-exam { width: fit-content; /*border: 1px dashed royalblue; padding:10px; */ display:flex;  } /*width: fit-content -> 가로싸이즈 지정: 컨텐츠만큼 가로 차지함. display:flex; 하위 수직정렬(div)을 가로정렬로 바꿈 == inline-block과 동일효과 */
+#div6 { width: 100px; height: 100px; float: left; background-color: magenta }
+#div7 { width: 100px; height: 100px; float: left; margin-left: 10px; background-color: magenta }
+#div8 { width: 100px; height: 100px; float: left; margin-left: 10px; background-color: magenta }
+
+#div9 { height: 100px; width: 200px; position: absolute; background: blue; color: white; }
+    
+
+
+
+#question { padding: 5px; width: 400px; border: solid 1px gray; text-align: center; background-color: lightyellow; }
+#answer { background-color: lightgreen; display: none }
+.green { color: darkgreen; font-weight: bold; font-style: italic; }
+
+#div9 { height: 100px; width: 200px; position: absolute; background: blue; color: white; }
+
+
