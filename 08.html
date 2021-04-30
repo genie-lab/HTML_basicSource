@@ -89,7 +89,7 @@
     <img src="./img/moon.jpg" id="moon" height="100">
 
     <p id="three">3개의 이미지를 표시하려면 <b>나를</b> 클릭하세요!!</p> 
-    <img id="flower"> <img id="flower"> <img id="flower">
+    <img class="flower"> <img class="flower"> <img class="flower">
     <script>
         $(document).ready( function() { 
             $("img#moon").click( function () { 
@@ -98,7 +98,7 @@
 
             // $(선택자).attr( 속성명, function (index, currentValue) { … } )
             $("#three").click( function () { 
-                $("img#flower").attr( { 
+                $(".flower").attr( { 
                     src: "./img/lion.jpg", 
                     width: function (index) { return (index+1)*35 }, height: 75 } );
             });
